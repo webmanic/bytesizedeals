@@ -1,0 +1,54 @@
+<script>
+    var fbButton = document.getElementById('fb-share-button');
+    var url = window.location.href;
+
+    fbButton.addEventListener('click', function() {
+        window.open('https://www.facebook.com/sharer/sharer.php?u=' + url,
+            'facebook-share-dialog',
+            'width=800,height=600'
+        );
+        return false;
+    });
+</script>
+<div id="shares" class="shares" ng-show="show">
+    <div id="panel">
+        <div class="share"
+             tooltip 
+             tooltip-title="Facebook">
+            <img src="./img/share/facebook.png" alt="" srcset="" id="fb-share-button"/>
+        </div>
+        <div class="share"
+             tooltip 
+             tooltip-title="Twitter">
+             <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Bytesizedeals {{fullUrlPath}}." target="_blank">
+                <img src="./img/share/twitter.png" alt="" srcset=""/>
+            </a>
+        </div>
+        <div class="share"
+             tooltip 
+             tooltip-title="Google+">
+            <a href="https://plus.google.com/share?url={{fullUrlPath}}" target="_blank">
+                <img src="./img/share/google.png" alt="" srcset=""/>
+            </a>
+        </div>
+        <div class="share"
+             tooltip 
+             tooltip-title="Instagram">
+            <a href="https://www.instagram.com/bytesizedeals/?hl=en" target="_blank">
+                <img src="./img/share/instagram.png" alt="" srcset=""/>
+            </a>
+        </div>
+        <div class="share" 
+             ng-click="viewSubscribe()"
+             tooltip 
+             tooltip-title="Subscribe">
+            <img src="./img/share/subscribe.png" alt="" srcset=""/>
+        </div>
+    </div>
+    <div class="share" 
+         ng-click="showPanel()"
+         tooltip 
+         tooltip-title="Share">
+        <img src="./img/share/share.png" alt="" srcset="">
+    </div>
+</div>

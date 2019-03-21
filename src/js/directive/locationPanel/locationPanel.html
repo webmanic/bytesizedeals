@@ -1,0 +1,19 @@
+<div id="location_slider" class="collapse" ng-class="collapsed ? 'in': ''">
+    <bt-google-map id="'restaurant-' + restaurant.id", zoom="18", restaurant="restaurant" class="google-map"></bt-google-map>
+    <div class="container">
+        <h3>Address:</h3>
+        <p>
+            <span>{{restaurant.address_line1}}</span>
+            <span>{{restaurant.address_line2}}</span>
+            <span>{{restaurant.address_line3}}</span>
+            <span>{{restaurant.city}}</span>
+            <span>{{restaurant.county}}</span>
+            <span>{{restaurant.post_code}}</span>
+            <span>{{restaurant.country}}</span>
+        </p>
+    </div>
+</div>
+<div class="toggle_button">
+    <input type="submit" class="toggle orange-gradient" value="{{!collapsed ? 'Show Location' : 'Hide Location'}}" ng-click="showLocationPanel()"/>
+    <i class="fa" ng-class="collapsed ? 'fa-angle-up': 'fa-angle-down'" ng-click="showLocationPanel()"></i>
+</div>

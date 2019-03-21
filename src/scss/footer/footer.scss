@@ -1,0 +1,121 @@
+footer{
+    background: black;
+    width:100%;
+    color: white;
+    height: 180px;
+    .container{
+        background: black;
+        padding: $padding;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin: auto;
+        box-sizing: border-box;
+        display: table;
+        .container_third{
+            display: inline-block;
+            width: 33.33%;
+            box-sizing: border-box;
+            padding: 15px;
+            vertical-align: top;
+            .rewards_title{
+                text-align: center;
+                font-weight: bold;
+            }
+            .rewards{
+                float: right;
+                img{
+                    width: 70px;
+                    @include respond-to(md){
+                        width: 50px;
+                    }
+                    @include respond-to(sm){
+                        width: 50px;
+                    }
+                    @include respond-to(xs){
+                        width: 50px;
+                    }
+                    @include respond-to(xxs){
+                        width: 50px;
+                    }
+                }
+                @include respond-to(xs){
+                    float: none;
+                }    
+                @include respond-to(xxs){
+                    float: none;
+                } 
+            }
+            h2{
+                margin-top: 0px;
+                margin-bottom: 5px;
+            }
+            a{
+                color: white;
+                text-decoration: none;
+                clear: both;
+                display: block;
+                margin-bottom: 5px;
+            }
+            a:hover{
+                text-decoration: underline;
+            }
+            table{
+                text-align: left;
+                @include respond-to(xs){
+                    text-align: left;
+                    width: auto;
+                    margin: auto;
+                }    
+                @include respond-to(xxs){
+                    text-align: left;
+                    width: auto;
+                    margin: auto;
+                }         
+            }
+            @include respond-to(xs){
+                width: 100%;
+            }
+            @include respond-to(xxs){
+                width: 100%;
+            }
+        }
+        .container_third:first-child{
+            text-align: left;
+            @include respond-to(xs){
+                text-align: center;
+            }
+            @include respond-to(xxs){
+                text-align: center;
+            }
+        }
+        .container_third:nth-child(2){
+            text-align: center;
+        }
+        .container_third:last-child{
+            text-align: right;
+            @include respond-to(xs){
+                text-align: center;
+            }
+            @include respond-to(xxs){
+                text-align: center;
+            }
+        }
+        @include respond-to(xxs){
+            width: 100%;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        @include respond-to(xs){
+            width: 100%;
+        }
+        @include respond-to(sm){
+            width: $screen-sm;
+        }
+        @include respond-to(md){
+            width: $screen-md;
+        }
+        @include respond-to(lg){
+            width: $screen-lg;
+        }
+    }
+}

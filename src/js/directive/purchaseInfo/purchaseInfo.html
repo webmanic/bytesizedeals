@@ -1,0 +1,175 @@
+<div class="overlay" ng-if="purchaseInfo"></div>
+<div class="subscribe purchase" ng-if="purchaseInfo" ng-class="{'admin-purchase' : jwtPayLoad.role.indexOf('administrator') >= 0}"> 
+    <div class="container">
+        <i class="fa fa-close close" ng-click="close()"></i>
+        <h1>Purchase Information:</h1>
+        <div class="purchase-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            ID:
+                        </th>
+                        <th>
+                            Payment ID:
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            {{info.id}}
+                        </td>
+                        <td>
+                            {{info.payment_id}}
+                        </td>
+                    </tr>
+                </tbody>
+                <thead ng-if="jwtPayLoad.role.indexOf('administrator') >= 0">
+                    <tr>
+                        <th>
+                            Restuarant Title:
+                        </th>
+                        <th>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody ng-if="jwtPayLoad.role.indexOf('administrator') >= 0">
+                    <tr>
+                        <td>
+                            {{info.title}}
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                </tbody>    
+                <thead ng-if="jwtPayLoad.role.indexOf('administrator') >= 0">
+                    <tr>
+                        <th>
+                            Email:
+                        </th>
+                        <th>
+                            Username:
+                        </th>
+                    </tr>
+                </thead>
+                <tbody ng-if="jwtPayLoad.role.indexOf('administrator') >= 0">
+                    <tr>
+                        <td>
+                            {{info.email}}
+                        </td>
+                        <td>
+                            {{info.username}}
+                        </td>
+                    </tr>
+                </tbody>
+                <thead ng-if="jwtPayLoad.role.indexOf('administrator') >= 0">
+                    <tr>
+                        <th>
+                            First Name:
+                        </th>
+                        <th>
+                            Last Name:
+                        </th>
+                    </tr>
+                </thead>
+                <tbody ng-if="jwtPayLoad.role.indexOf('administrator') >= 0">
+                    <tr>
+                        <td>
+                            {{info.firstname}}
+                        </td>
+                        <td>
+                            {{info.lastname}}
+                        </td>
+                    </tr>
+                </tbody>
+                <thead ng-if="jwtPayLoad.role.indexOf('administrator') >= 0">
+                    <tr>
+                        <th>
+                            Telephone No:
+                        </th>
+                        <th>
+                            Mobile No:
+                        </th>
+                    </tr>
+                </thead>
+                <tbody ng-if="jwtPayLoad.role.indexOf('administrator') >= 0">
+                    <tr>
+                        <td>
+                            {{info.telephone_no}}
+                        </td>
+                        <td>
+                            {{info.mobile_no}}
+                        </td>
+                    </tr>
+                </tbody>
+                <thead ng-hide="info.start_date == '0000-00-00'">
+                    <tr>
+                        <th colspan="2" class="text-center">
+                            Contract Date:
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            Start Date:
+                        </th>
+                        <th>
+                            End Date:
+                        </th>
+                    </tr>
+                </thead>
+                <tbody ng-hide="info.start_date == '0000-00-00'">
+                    <tr>
+                        <td>
+                            {{formatDate(info.start_date) | date:'dd/MM/yyyy'}}
+                        </td>
+                        <td>
+                            {{formatDate(info.end_date) | date:'dd/MM/yyyy'}}
+                        </td>
+                    </tr>
+                </tbody>
+                <thead ng-if="info.amount_breakdown.details.tax > 0">
+                    <tr>
+                        <th>
+                            Subtotal:
+                        </th>
+                        <th>
+                            VAT(20%):
+                        </th>
+                    </tr>
+                </thead>
+                <tbody ng-if="info.amount_breakdown.details.tax > 0">
+                    <tr>
+                        <td>
+                            {{info.amount_breakdown.details.subtotal | currency:"£"}}
+                        </td>
+                        <td>
+                            {{info.amount_breakdown.details.tax | currency:"£"}}
+                        </td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th>
+                            Payment Type:
+                        </th>
+                        <th>
+                            Total Amount:
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            {{info.type == 'CASH' ? 'Cash': 'PayPal'}}
+                        </td>
+                        <td>
+                            {{info.amount_breakdown.total | currency:"£"}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="clear_both"></div>
+    </div>
+</div>

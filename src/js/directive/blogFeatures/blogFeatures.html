@@ -1,0 +1,16 @@
+<div class="blog-features">
+    <ul>
+        <li ng-if="blog.user_id == jwtPayLoad.user_id" 
+            ng-click="delete()"
+            tooltip 
+            tooltip-title="Delete comment">
+            <i class="fa fa-trash"></i>
+        </li>
+        <li ng-if="blog.user_id != jwtPayLoad.user_id" 
+            ng-click="flag()"
+            tooltip 
+            tooltip-title="Flag it">
+            <i class="fa fa-flag"></i>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,163 @@
+@import 'global/global';
+
+.blogs{
+    margin-top: 20px;
+    .review{
+        .blog_content{
+            display: table;
+            width: 100%;
+            margin-bottom: 10px;
+            background: #0000002b;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            .logged_in{
+                .blog{
+                    position: relative;
+                    color: black;
+                    .contenteditable_container{
+                        .simditor{
+                            .simditor-body{
+                                min-height: 0px;
+                            }
+                        }
+                    }
+                    .rate{
+                        position: relative;
+                        float: left;
+                        cursor: pointer;
+                        color: white;
+                        width: 144px;
+                        margin-top: 10px;
+                        font-size: 16px;
+                        .stars{
+                            margin-left: 5px;
+                            margin-top: 2px;
+                            float: right;
+                        }
+                    }
+                    .info{
+                        color: white;
+                        margin-top: 6px;
+                        font-size: 12px;
+                        float: right;
+                        .post_button{
+                            border: none;
+                            color: white;
+                            text-decoration: none;
+                            background: orange;
+                            padding: 5px;
+                            border-radius: 100px;
+                            cursor: pointer;
+                            padding-left: 50px;
+                            padding-right: 50px;
+                            text-align: center;
+                            font-size: 16px;
+                            margin-top: 5px;
+                        }
+                        .post_button:hover{
+                            opacity: 0.9;
+                        }
+                        span{
+                            position: relative;
+                            top: 2px;
+                        }
+                    }
+                }
+            }
+            .logged_out{
+                text-align: center;
+                a{
+                    color: white;
+                    text-decoration: underline;
+                }
+                a:hover{
+                    text-decoration: none;
+                }
+            }
+        }
+        .blog_list{
+            .blog{
+                position: relative;
+                display: table;
+                width: 100%;
+                margin-bottom: 10px;
+                background: #0000002b;
+                padding: 10px;
+                box-sizing: border-box;
+                .content-left{
+                    width: 50px;
+                    height: 50px;
+                    line-height: 50px;
+                    background: #fca11e99;
+                    padding: 10px;
+                    font-size: 33px;
+                    text-transform: uppercase;
+                    display: inline-block;
+                    margin-right: 20px;
+                    text-align: center;
+                    box-sizing: border-box;
+                    text-shadow: -2px 3px 6px #000000;
+                }
+                .content-right{
+                    display: inline-block;
+                    vertical-align: top;
+                    box-sizing: border-box;
+                    width: 100%;
+                    margin-left: -70px;
+                    padding-left: 70px;
+                    .title{
+                        display: table;
+                        width: 100%;
+                        .username{
+                            display: inline-block;
+                            text-transform: capitalize;
+                        }
+                        .date{
+                            display: inline-block;
+                            margin-left: 5px;
+                            font-size: 12px;
+                            color: #8c8c8c;
+                            font-weight: bold;
+                        }
+                        .stars{
+                            float: right;
+                        }
+                    }
+                    .comment{
+                        clear: both;
+                        overflow-wrap: break-word;
+                        white-space: normal;
+                        word-wrap: break-word;
+                        word-break: break-all;
+                    }
+                }
+            }
+            .load_more{
+                input[type=button]{
+                    padding: 10px;
+                    font-size: 16px;
+                    margin-top: 0px;
+                }
+            }
+            p{
+                padding-bottom: 6px;
+                border-bottom: 1px solid;
+                padding: 10px;
+                font-size: 18px;
+            }
+            .comment{
+                p{
+                    padding: 0px;
+                    border: none;
+                    margin: 0px;
+                    margin-top: 2px;
+                }
+                ul, ol{
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}

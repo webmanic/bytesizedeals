@@ -1,0 +1,366 @@
+@import 'transition/transition';
+.signup_restaurant_form,
+.signup_form,
+.login_box{
+    display: table;
+    width: 100%;
+    margin: auto;
+    .error_info{
+        position: relative;
+        background: #ff000099;
+        color: white;
+        padding: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
+        clear: both;
+    }
+    .form-group{
+        clear: both;
+        .cropped-container{
+            position: relative;
+            background-color: #190f0fb5;
+            .title{
+                position: absolute;
+                bottom: 50px;
+                padding: 5px;
+                z-index: 1;
+                width: 100%;
+                box-sizing: border-box;
+                text-align: center;
+                word-break: break-all;
+                font-size: 14px;
+            }
+        }
+        .preview{
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            z-index: 1;
+            border-radius: 50px;
+            padding: 0px;
+            margin: 0px;
+            line-height: 0px;
+            margin: 5px;
+        }
+        table{
+            td{
+                position: relative;
+            }
+        }
+    }
+    .form_title{
+        background: #190f0fb5;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-align: center;
+        color: white;
+        border-top: 1px solid #333333;
+        border-bottom: 1px solid #333333;
+    }
+    .image_upload{
+        position: relative;
+        background: #190f0fb5;
+        width: 100%;
+        text-align: center;
+        img{
+            width: 100%;
+        }
+        table{
+            color: white;
+            border-spacing: 0px;
+            width: 100%;
+            padding: 15px;
+            padding-bottom: 0px;
+            table-layout: fixed;
+            box-sizing: border-box;
+            td{
+                word-wrap: break-word;
+                small{
+                    color: grey;
+                    font-size: 12px;
+                }
+                .error{
+                    color: red;
+                    border: none;
+                }
+                .fa-close{
+                    cursor: pointer;
+                }
+                a{
+                    text-decoration: none;
+                    color: white;
+                    cursor: pointer;
+                }
+                .title{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    .image_title{
+        position: relative;
+        display: block;
+        background: #190f0fb5;
+        padding: 15px;
+        color: white;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .external_link{
+        color: white;
+        text-decoration: none;
+        background: orange;
+        padding: 10px;
+        cursor: pointer;
+        width: 100%;
+        display: block;
+        text-align: center;
+        font-size: 19px;
+        box-sizing: border-box;
+    }
+    .external_link:hover {
+        opacity: 0.9;
+    }
+    .terms-and-condition{
+        padding-top: 10px;
+        text-align: center;
+    }
+}
+.signup_restaurant_form form{
+    display: table;
+    width: 100%;
+}
+.checkbox-form,
+.signup_form form .button_select,
+.login_box form .button_select{
+    width: 50%;
+    float: left;
+    text-align: center;
+    border-bottom: 3px solid #f99c1c;
+    color: white;
+    background: #ada29e;
+    color: black;
+    padding: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+    
+    .icon{
+        width: 50px;
+    }
+}
+
+.checkbox-form{
+    display: table;
+    width: 100%;
+    text-align: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: default;
+    input[type=checkbox]{
+        margin-left: 0px;
+    }
+    .check{
+        display: inline-block;
+        width: 33.33%;
+        text-align: left;
+    }
+}
+
+.signup_restaurant_form .custom-input-file.error,
+.checkbox-form.error,
+.signup_form form .button_select.error,
+.login_box form .button_select.error{
+    border-bottom: 3px solid #ff0000;
+}
+
+.signup_form form .button_select:first-child,
+.login_box form .button_select:first-child{
+    border-right: 1px solid #949494;
+}
+
+.signup_form form .button_select.active,
+.login_box form .button_select.active{
+    background: #847d7a;
+    border-bottom: 3px solid #0089ff;
+}
+.signup_restaurant_form .custom-input-file.valid,
+.checkbox-form.valid{
+    border-bottom: 3px solid #00b717;
+}
+
+.signup_form{
+    margin-top: 5%;
+}
+
+.reset_login_form{
+    margin-top: 20%;
+}
+
+.signup_restaurant_form 
+{
+    .description_container{
+        position: relative;
+        div[contenteditable]{
+            width: 100%;
+            padding: 15px;
+            background: #ffffff91;
+            box-sizing: border-box;
+            font-size: 16px;
+            margin: 0px;
+            border: none;
+            border-bottom: 3px solid #f99c1c;
+            resize: vertical;
+            min-height: 150px;
+            overflow-wrap: break-word;
+            white-space: normal;
+            word-wrap: break-word;
+            word-break: break-all;
+            outline: 0;
+            color: black;
+        }
+        div[contenteditable].error{
+            border-bottom: 3px solid #ff0000;
+        }
+        div[contenteditable].valid{
+            border-bottom: 3px solid #00b717;
+        }
+        div[contenteditable]:empty:not(:focus)::before{
+            content:attr(data-text);
+            color: $placeholder;
+        }
+        div[contenteditable]:focus{
+            border-bottom: 3px solid #0089ff;
+        }
+        .character{
+            position: absolute;
+            bottom: 5px;
+            right: 15px;
+            font-size: 12px;
+            color: #484848;
+        }
+    }
+    .contract_times{
+        td{
+            text-align: center;
+        }
+    }
+    .opening_times{
+        border-bottom: 3px solid #01b71a;
+        color: white;
+        background: #ada29e;
+        color: black;
+        box-sizing: border-box;
+        table{
+            border-spacing: 0px;
+            width: 100%;
+            .closed{
+                text-align: center;
+            }
+            thead{
+                background: #3a8ee8;
+                color: white;
+                tr.header{
+                    td{
+                        background: black;
+                        text-align: center;
+                    }
+                }
+                td{
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    @include respond-to(xxs){
+                        padding-left: 0px;
+                        padding-right: 0px;  
+                    }
+                    @include respond-to(xs){
+                        padding-left: 0px;
+                        padding-right: 0px;  
+                    }
+                }
+            }
+            tbody{
+                tr{
+                    td{
+                        padding-top: 5px;
+                        padding-bottom: 5px;
+                        padding-left: 15px;
+                        padding-right: 15px;
+                        @include respond-to(xxs){
+                            padding-left: 0px;
+                            padding-right: 0px;  
+                        }
+                        @include respond-to(xs){
+                            padding-left: 0px;
+                            padding-right: 0px;  
+                        }
+                    }
+                    td.times{
+                        display: table;
+                        width: 100%;
+                        box-sizing: border-box;
+                        text-align: center;
+                        select{
+                            display: inline-block;
+                            width: 27px;
+                            padding: 0px;
+                            background-position: center right 0px;
+                            background-size: 5px;
+                            background-color: transparent;
+                            padding-bottom: 2px;
+                            cursor: pointer;
+                        }
+                        select.select_hour{
+                            background-image: none;
+                            width: 19px;
+                        }
+                    }
+                    td.days{
+                        text-transform: capitalize;
+                    }
+                }
+                tr:nth-child(odd) {
+                    background: #ec8b40;
+                }
+                
+                tr:nth-child(even) {
+                background: #eeb990;
+                }
+            }
+        }
+    }
+}
+.myaccount_form{
+    input:disabled{
+        background: white;
+        color: black;
+    }
+    .form-group{
+        margin-bottom: 10px;
+        label{
+            color: white;
+            clear: both;
+            width: 100%;
+            display: block;
+        }
+        input, 
+        .button_select,
+        .button_select.active{
+            border-bottom: none;
+            opacity: 0.5;
+            cursor: default;
+        }
+        .button_select{
+            width: 33.33%;
+        }
+        .button_select.active{
+            opacity: 1;
+        }
+    }
+}
+

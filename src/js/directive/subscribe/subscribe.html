@@ -1,0 +1,30 @@
+<div class="overlay" ng-if="showSubscribe"></div>
+<div class="subscribe" ng-if="showSubscribe"> 
+    <div class="container">
+        <i class="fa fa-close close" ng-click="close()"></i>
+        <h1>Subscribe to our newsletter</h1>
+        <p>Sign up here to get the latest news, updates and special offers delivered directly to your inbox.</p>
+        <form ng-submit="subscribe_submit($event, subscribe)" model="subscribe" id="subscribe" autocomplete="off">
+            <div class="form-group">
+                <input type="text" 
+                        name="email" 
+                        id="email" 
+                        ng-class="{'error': subscribe.email.valid == false,
+                                   'valid': subscribe.email.valid == true}"  
+                        ng-model="subscribe.email.value" 
+                        ng-blur="validateEmail(); fieldBlur('email');" 
+                        ng-focus="fieldFocus('email')" 
+                        placeholder="Email..."
+                        autocomplete="email">
+            </div>
+            <button role="submit" 
+                    class="button_submit blue border-orange"
+                    ng-class="{'error': subscribe.email.valid == false,
+                               'valid': subscribe.email.valid == true,
+                               'focus': subscribe.email.focus}"  ><i class="fa fa-envelope"></i></button>
+            <div class="error_info" ng-if="subscribe.email.valid == false && subscribe.email.error =='email_not_valid'">Email is not valid</div>
+        </form>
+        <p class="info">You can unsubscribe at any time</p>
+        <div class="clear_both"></div>
+    </div>
+</div>

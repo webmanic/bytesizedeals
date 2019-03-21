@@ -1,0 +1,31 @@
+<div class="blog_login">
+    <form ng-submit="blog_login_submit($event, blogLogin)" model="blogLogin" id="blogLogin" autocomplete="off">
+        <div class="form-group">
+            <input type="text" 
+                    name="username" 
+                    id="username" 
+                    ng-class="{'error': blogLogin.username.valid == false,
+                                'valid': blogLogin.username.valid == true}" 
+                    ng-model="blogLogin.username.value" 
+                    placeholder="Username..."
+                    autocomplete="username">
+        </div>
+        <div class="form-group">
+            <input type="password" 
+                   name="password" 
+                   id="password" 
+                   ng-class="{'error': blogLogin.password.valid == false,
+                              'valid': blogLogin.password.valid == true}" 
+                   ng-model="blogLogin.password.value"
+                   placeholder="Password..."
+                   autocomplete="password">
+        </div>
+        <button role="submit" class="button_submit blue">
+            Login
+            <img class="buffer" src="./img/gif/buffer.gif" ng-if="loader"/>
+        </button>
+        <div class="reset_password">
+            <a ui-sref="reset">Forgot your password?</a>
+        </div>
+    </form>
+</div>

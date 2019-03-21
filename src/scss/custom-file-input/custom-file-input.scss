@@ -1,0 +1,74 @@
+@import 'global/global';
+
+.custom-input-file{
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    height: 60px;
+    background: #ffffff91;
+    border: none;
+    font-size: 16px;
+    border-bottom: 3px solid #f99c1c;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    float: left;
+}
+.inputfile {
+    overflow: hidden;
+}
+
+.inputfile-6 + label
+{
+    line-height: 30px;
+    cursor: pointer;
+}
+.inputfile-6 + label .placeholder{
+    color: $placeholder;
+}
+.inputfile-6 + label strong {
+    padding: 0.625rem 1.25rem;
+    background: #499bea;
+    background: -moz-linear-gradient(top, #499bea 0%, #207ce5 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, #499bea), color-stop(100%, #207ce5));
+    background: -webkit-linear-gradient(top, #499bea 0%, #207ce5 100%);
+    background: -o-linear-gradient(top, #499bea 0%, #207ce5 100%);
+    background: -ms-linear-gradient(top, #499bea 0%, #207ce5 100%);
+    background: linear-gradient(to bottom, #499bea 0%, #207ce5 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#207ce5', GradientType=0 );
+    cursor: pointer;
+}
+
+.inputfile-6 + label strong:hover{
+    background: #134e85;
+    background: -moz-linear-gradient(top, #134e85 0%, #003975 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, #134e85), color-stop(100%, #003975));
+    background: -webkit-linear-gradient(top, #134e85 0%, #003975 100%);
+    background: -o-linear-gradient(top, #134e85 0%, #003975 100%);
+    background: -ms-linear-gradient(top, #134e85 0%, #003975 100%);
+    background: linear-gradient(to bottom, #134e85 0%, #003975 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#134e85', endColorstr='#003975', GradientType=0 );
+}
+
+.inputfile-6 + label strong {
+    position: relative;
+    float: right;
+    height: 100%;
+    color: #f1e5e6;
+    background-color: #f99c1c;
+    top: -10px;
+    line-height: 30px;
+}
+
+.inputfile-6:focus + label strong,
+.inputfile-6.has-focus + label strong,
+.inputfile-6 + label:hover strong {
+    opacity: 0.9;
+}
+
+@media screen and (max-width: 50em) {
+	.inputfile-6 + label strong {
+		display: block;
+	}
+}

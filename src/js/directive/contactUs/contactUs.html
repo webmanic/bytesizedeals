@@ -1,0 +1,82 @@
+<div class="signup_form contact_us">   
+    <div class="container-left">
+        <h1>Contact Us:</h1>
+        <p>
+            If you have an enquiry please do contact us, we will get back to you as soon as possible.
+        </p>
+    </div>
+    <div class="container-right">
+        <form ng-submit="contactUs_submit(signup)" model="contactUs" id="contactUs" autocomplete="off">
+            <div class="form-group">
+                <input type="text" 
+                    name="email" 
+                    id="email" 
+                    ng-class="{'error': contactUs.email.valid == false,
+                               'valid': contactUs.email.valid == true}"  
+                    ng-model="contactUs.email.value" 
+                    ng-blur="validateEmail(); fieldBlur('email');" 
+                    ng-focus="fieldFocus('email')" 
+                    placeholder="Email..."
+                    autocomplete="email">
+                <div class="error_info" ng-if="contactUs.email.valid == false && contactUs.email.error =='email_not_valid'">Email is not valid</div>
+                <div class="error_info" ng-if="contactUs.email.valid == false && contactUs.email.error =='exists'">Email already taken</div>
+            </div>
+            <div class="form-group">
+                <input type="text" 
+                    name="subject" 
+                    id="subject" 
+                    ng-class="{'error': contactUs.subject.valid == false,
+                                'valid': contactUs.subject.valid == true}"  
+                    ng-model="contactUs.subject.value" 
+                    ng-blur="validateLength('subject', 5); fieldBlur('subject');" 
+                    ng-focus="fieldFocus('subject')"  
+                    placeholder="Subject..."
+                    autocomplete="subject">
+                <div class="error_info" ng-if="contactUs.subject.valid == false && contactUs.subject.error =='length'">Your subject character length should be more than {{contactUs.subject.length}}</div>
+            </div>
+            <div class="form-group">
+                <textarea type="text" 
+                    name="messgae" 
+                    id="messgae" 
+                    ng-class="{'error': contactUs.message.valid == false,
+                                'valid': contactUs.message.valid == true}"  
+                    ng-model="contactUs.message.value" 
+                    ng-blur="validateLength('message', 5); fieldBlur('message');" 
+                    ng-focus="fieldFocus('message')"  
+                    placeholder="Message..."
+                    autocomplete="message"
+                    maxlength="500">
+                </textarea>
+                <div class="error_info" ng-if="contactUs.message.valid == false && contactUs.message.error =='length'">Your message character length should be more than {{contactUs.message.length}}</div>
+            </div>
+            <div class="form-group">
+                <div class="form_title">Enquiry Type</div>
+                <div class="button_select" ng-class="{'error': contactUs.type.valid == false,
+                                                      'active': contactUs.type.value == 'blog'}" ng-click="selected_type('blog')">
+                    <img src="./img/icon/comment.png" alt="Comment" class="icon">
+                    <div>Comment</div>
+                </div>
+                <div class="button_select" ng-class="{'error': contactUs.type.valid == false,
+                                                      'active': contactUs.type.value == 'restaurant'}" ng-click="selected_type('restaurant')">
+                    <img src="./img/icon/restaurant.png" alt="Restaurant" class="icon">
+                    <div>Restaurant</div>
+                </div>
+                <div class="button_select" ng-class="{'error': contactUs.type.valid == false,
+                                                      'active': contactUs.type.value == 'website'}" ng-click="selected_type('website')">
+                    <img src="./img/icon/browser.png" alt="Website" class="icon">
+                    <div>Website</div>
+                </div>
+                <div class="button_select" ng-class="{'error': contactUs.type.valid == false,
+                                                      'active': contactUs.type.value == 'other'}" ng-click="selected_type('other')">
+                    <img src="./img/icon/question.png" alt="Other" class="icon">
+                    <div>Other</div>
+                </div>
+                <div class="error_info" ng-if="contactUs.type.valid == false">Please select type</div>
+            </div>
+            <button type="submit" class="button_submit blue">
+                Submit
+                <img class="buffer" src="./img/gif/buffer.gif" ng-if="loader"/>
+            </button>
+        </form>
+    </div>
+</div> 

@@ -1,0 +1,41 @@
+<div class="blogs">
+    <div class="review">
+        <div class="blog_content" ng-if="jwtPayLoad.role.indexOf('blog') != -1">
+            <div class="logged_out" ng-if="!isLoggedIn">
+                <p><span>We love to hear your view. To comment please <a ui-sref="signup">Signup</a>  or <a ng-click="showBlogLogin($event)" href="#">Login</a></span> if you have an account.</p>
+            </div>
+            <div class="logged_in" ng-if="isLoggedIn">
+                <div class="blog">
+                    <div class="contenteditable_container">
+                        <div ng-class="{'error': blog.blog.valid == false,
+                                        'valid': blog.blog.valid == true}">
+                            <ng-simditor content="blog.blog.value"
+                                        id="blog"
+                                        length="1"
+                                        validate="validateLength"
+                                        blur="fieldBlur"
+                                        focus="fieldFocus"
+                                        max="appConfig.max_blog_limit"
+                                        limit="true"
+                                        count="false"
+                                        toolbar="toolbar"
+                                        allowed-tags="allowedTags"
+                                        placeholder="Please write a review..."></ng-simditor>
+                        </div>
+                    </div>
+                    <div class="rate">
+                        Rate us:<bt-stars rate="rate" get-rate="getRate" class="stars"></bt-stars>
+                    </div>
+                    <div class="info">
+                        <input type="submit" value="Post" ng-click="blog_comment()" class="post_button">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <bt-blog-login ng-if="showLogin"></bt-blog-login>
+        <bt-blog-comments blog-list="blogList" ng-if="blogList.length > 0" load-more="loadMore()" row-no="rowNo" page-no="pageNo" jwt-pay-load="jwtPayLoad" is-logged-in="isLoggedIn" loader-blog="loaderBlog"></bt-blog-comments>
+        <div class="blog_list" ng-if="(jwtPayLoad.role.indexOf('blog') != -1 || jwtPayLoad == undefined) && blogList.length == 0">
+            <p>Be the first to review...</p>
+        </div>
+    </div>
+</div>

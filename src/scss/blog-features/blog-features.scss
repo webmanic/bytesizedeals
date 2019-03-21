@@ -1,0 +1,19 @@
+.blog-features{
+    position: absolute;
+    right: 10px;
+    bottom: 6px;
+    font-size: 12px;
+    ul{
+        padding: 0px;
+        margin: 0px;
+        list-style: none;
+        li{
+            display: inline-block;
+            margin-left: 2px;
+            cursor: pointer;
+        }
+        li i.fa-flag{
+            color: red;
+        }
+    }
+}

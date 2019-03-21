@@ -1,0 +1,126 @@
+.galleries{
+    .gallery{
+        display: table;
+        background: #0000003b;
+        padding: 4px;
+        box-sizing: border-box;
+        table-layout: fixed;
+        .container{
+            padding: 0px;
+            margin: 0px;
+            img{
+                display: inline-block;
+                height: 100px;
+                margin: 3px;
+                margin-bottom: -3px;
+                cursor: pointer;
+                @include respond-to(md){
+                    width: 100%;
+                    height: auto;
+                }
+                @include respond-to(sm){
+                    width: 100%;
+                    height: auto;
+                }
+                @include respond-to(xs){
+                    width: 100%;
+                    height: auto;
+                }
+                @include respond-to(xxs){
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+    .slick-prev{
+        left: 5px;
+    }
+    .slick-next{
+        right: 5px;
+    }
+    .slick-prev,
+    .slick-next{
+        background: #0000002b;
+        border-radius: 50px;
+        z-index: 1;
+    }
+    .slick-slider{
+        background: #0000002b;
+        padding: 10px;
+        .slick-list{
+            .slick-track{
+                .slick-slide{
+                    height: 100px;
+                    width: auto;
+                    .image{
+                        cursor: pointer;
+                        height: 100px;
+                        width: auto;
+                        img{
+                            height: 100%;
+                            @include respond-to(md){
+                                width: 100%;
+                                height: auto;
+                            }
+                            @include respond-to(sm){
+                                width: 100%;
+                                height: auto;
+                            }
+                            @include respond-to(xs){
+                                width: 100%;
+                                height: auto;
+                            }
+                            @include respond-to(xxs){
+                                width: 100%;
+                                height: auto;
+                            }
+                        }
+                        @include respond-to(md){
+                            width: 100%;
+                            height: auto;
+                        }
+                        @include respond-to(sm){
+                            width: 100%;
+                            height: auto;
+                        }
+                        @include respond-to(xs){
+                            width: 100%;
+                            height: auto;
+                        }
+                        @include respond-to(xxs){
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                    @include respond-to(md){
+                        height: auto;
+                    }
+                    @include respond-to(sm){
+                        height: auto;
+                    }
+                    @include respond-to(xs){
+                        width: 100%;
+                        height: auto;
+                    }
+                    @include respond-to(xxs){
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+        @include respond-to(md){
+            padding-bottom: 4px;
+        }
+        @include respond-to(sm){
+            padding-bottom: 3px;
+        }
+        @include respond-to(xs){
+            padding-bottom: 3px;
+        }
+        @include respond-to(xxs){
+            padding-bottom: 3px;
+        }
+    }
+}

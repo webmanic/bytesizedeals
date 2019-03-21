@@ -1,0 +1,13 @@
+<div class="approval_list">
+    <h1>Admin Approval:</h1>
+    <div class="title" ng-if="restaurantApprovalList.length == 0">Results Not found...</div>
+    <div class="restaurants-list approval-list">
+        <bt-approval-restaurant restaurant-approval-list="restaurantApprovalList" index="$index" restaurant="restaurant" ng-repeat="restaurant in restaurantApprovalList" class="restaurant approval"></bt-approval-restaurant>
+    </div>
+    <div class="load_more" ng-if="rowNo > 1 && rowNo != pageNo">
+        <button role="submit" class="button_submit blue" ng-click="loadMore()">
+            Load More...
+            <img class="buffer" src="./img/gif/buffer.gif" ng-if="loaderBlog"/>
+        </button>
+    </div>
+</div>

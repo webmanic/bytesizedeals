@@ -1,0 +1,14 @@
+<div id="contact_slider" class="collapse" ng-class="collapsed ? 'in': ''">
+    <div class="container">
+        <h3>Contact Information:</h3>
+        <p>
+            <span>{{restaurant.email}}</span>
+            <span>{{restaurant.telephone_no}}</span>
+            <span>{{restaurant.mobile_no}}</span>
+        </p>
+    </div>
+</div>
+<div class="toggle_button">
+    <input type="submit" class="toggle orange-gradient" value="{{!collapsed ? 'Show Contact Information' : 'Hide Contact Information'}}" ng-click="showLocationPanel()"/>
+    <i class="fa" ng-class="collapsed ? 'fa-angle-up': 'fa-angle-down'" ng-click="showLocationPanel()"></i>
+</div>

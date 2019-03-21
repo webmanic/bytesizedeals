@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Byte Size Deals</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="./css/theme.css" />
+        <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+        <link rel="manifest" href="./favicon/site.webmanifest">
+        <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#f99e15">
+        <link rel="stylesheet" href="./bower_components/slick-carousel/slick/slick.css">
+        <link rel="stylesheet" href="./bower_components/slick-carousel/slick/slick-theme.css">
+        <link rel="stylesheet" href="./bower_components/featherlight/release/featherlight.min.css">
+        <link rel="stylesheet" href="./bower_components/featherlight/release/featherlight.gallery.min.css">
+        <link rel="stylesheet" href="./bower_components/simditor/styles/simditor.css" />
+        <link rel="stylesheet" href="./bower_components/simditor-html/styles/simditor-html.css" />
+        <link rel="stylesheet" href="./bower_components/Croppie/croppie.css" />
+          <!-- styles -->
+        <meta name="apple-mobile-web-app-title" content="Byte Size Deals">
+        <meta name="application-name" content="Byte Size Deals">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="theme-color" content="#ffffff">
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXSdlgKC-1UWAhh8aEtQ2PQWj5Pfbo0oU"></script>
+        <script src="./bower_components/moment/min/moment.min.js"></script>
+        <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="./bower_components/angular/angular.min.js"></script>
+        <script src="./bower_components/featherlight/release/featherlight.min.js"></script>
+        <script src="./bower_components/featherlight/release/featherlight.gallery.min.js"></script>
+        <script src="./bower_components/angular-cookies/angular-cookies.min.js"></script>
+        <script src="./bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+        <script src="./bower_components/slick-carousel/slick/slick.js"></script>
+        <script src="./bower_components/angular-slick-carousel/dist/angular-slick.js"></script>
+        <script src="./bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
+        <script src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="./bower_components/ngstorage/ngStorage.min.js"></script>
+        <script src="./bower_components/simple-module/lib/module.js"></script>
+        <script src="./bower_components/simple-hotkeys/lib/hotkeys.js"></script>
+        <script src="./bower_components/simple-uploader/lib/uploader.js"></script>
+        <script src="./bower_components/simditor/lib/simditor.js"></script>
+        <script src="./bower_components/js-beautify/js/lib/beautify.js"></script>
+        <script src="./bower_components/js-beautify/js/lib/beautify-css.js"></script>
+        <script src="./bower_components/js-beautify/js/lib/beautify-html.js"></script>
+        <script src="./bower_components/simditor-html/lib/simditor-html.js"></script>
+        <script src="./bower_components/angular-simditor/src/angular-simditor.js"></script>
+        <script src="./bower_components/timeago.js/dist/timeago.min.js"></script>
+        <script src="./bower_components/Croppie/croppie.min.js"></script>
+        <script src="./bower_components/angular-croppie/angular-croppie.js"></script>
+        <script src="./bower_components/qrcode/qrcode.min.js"></script>
+        <script src="./js/script.js"></script>
+        <script src="https://www.paypalobjects.com/api/checkout.js" data-version-4></script>
+    </head>
+    <body ng-app="app">
+        <div ng-controller="mainController">
+            <bt-header></bt-header>
+            <bt-alerts></bt-alerts>
+        </div>
+        <div class="wrap">
+            <ui-view></ui-view>
+        </div>
+        <bt-share></bt-share>
+        <bt-subscribe></bt-subscribe>
+        <bt-cookie-banner></bt-cookie-banner>
+        <bt-footer></footer>
+    </body>
+</html>

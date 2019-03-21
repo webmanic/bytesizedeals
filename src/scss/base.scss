@@ -1,0 +1,180 @@
+@import 'responsive/responsive';
+@import 'global/global';
+@import 'generic/generic';
+@import 'nav-bar/nav-bar';
+@import 'header/header';
+@import 'footer/footer';
+@import 'search/search';
+@import 'form/form';
+@import 'button/button';
+@import 'signup/signup';
+@import 'alerts/alerts';
+@import 'overlay/overlay';
+@import 'login/login';
+@import 'restaurant-list/restaurant-list';
+@import 'restaurant-profile/restaurant-profile';
+@import 'stars/stars';
+@import 'custom-file-input/custom-file-input';
+@import 'animation/animation';
+@import 'google-map/google-map';
+@import 'blog/blog';
+@import 'share/share';
+@import 'subscribe/subscribe';
+@import 'blog-login/blog-login';
+@import 'wish/wish';
+@import 'wish-list/wish-list';
+@import 'blog-features/blog-features';
+@import 'tooltip/tooltip';
+@import 'approval/approval';
+@import 'contact-us/contact-us';
+@import 'gallery/gallery';
+@import 'featherlight/featherlight';
+@import 'paypal-button/paypal-button';
+@import 'switch/switch';
+@import 'purchase/purchase';
+@import 'loader/loader';
+@import 'checkbox/checkbox';
+@import 'cookie-banner/cookie-banner';
+@import 'advert/advert';
+
+
+html {
+    background: url('../img/background/background.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Nunito', sans-serif;
+    background-color: black;
+}
+
+body {
+    min-height: 100%;
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+}
+
+body .wrap {
+    margin: auto;
+    padding: $padding;
+    clear: both;
+    position: relative;
+    box-sizing: border-box;
+
+    @include respond-to(xxs) {
+        width: 100%;
+        min-height: calc(100% - 52px);
+    }
+
+    @include respond-to(xs) {
+        width: 100%;
+        min-height: calc(100% - 52px);
+    }
+
+    @include respond-to(sm) {
+        width: $screen-sm;
+        min-height: calc(100% - 52px);
+    }
+
+    @include respond-to(md) {
+        width: $screen-md;
+        min-height: calc(100% - 52px);
+    }
+
+    @include respond-to(lg) {
+        width: $screen-lg;
+        min-height: calc(100% - 75px);
+    }
+}
+
+body .wrap {
+    color: white;
+    font-size: 18px;
+
+    @include respond-to(xxs) {
+        font-size: 16px;
+    }
+}
+
+body .wrap .container {
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+body .wrap .container-left {
+    display: inline-block;
+    width: 40%;
+    box-sizing: border-box;
+    vertical-align: top;
+    padding-right: 5px;
+    margin-bottom: 10px;
+
+    @include respond-to(xs) {
+        padding-right: 0px;
+        width: 100%;
+    }
+
+    @include respond-to(xxs) {
+        padding-right: 0px;
+        width: 100%;
+    }
+}
+
+body .wrap .container-right {
+    display: inline-block;
+    width: 60%;
+    box-sizing: border-box;
+    vertical-align: top;
+    padding-left: 10px;
+
+    @include respond-to(xs) {
+        padding-left: 0px;
+        width: 100%;
+    }
+
+    @include respond-to(xxs) {
+        padding-left: 0px;
+        width: 100%;
+    }
+}
+
+body .wrap .container-left-half,
+body .wrap .container-right-half {
+    display: inline-block;
+    width: 50%;
+    box-sizing: border-box;
+    vertical-align: top;
+
+    @include respond-to(xs) {
+        width: 100%;
+    }
+
+    @include respond-to(xxs) {
+        width: 100%;
+    }
+}
+
+body .wrap .container-left-half {
+    padding-right: 5px;
+
+    @include respond-to(xs) {
+        padding-right: 0px;
+    }
+
+    @include respond-to(xxs) {
+        padding-right: 0px;
+    }
+}
+
+body .wrap .container-right-half {
+    padding-left: 5px;
+
+    @include respond-to(xs) {
+        padding-left: 0px;
+    }
+
+    @include respond-to(xxs) {
+        padding-left: 0px;
+    }
+}

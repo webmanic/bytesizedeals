@@ -1,0 +1,5 @@
+<div ng-controller="signupRestaurantController">
+    <bt-signup-restaurant ng-if="!signup_confirm && !signed_confirm"></bt-signup-restaurant>
+    <bt-signup-restaurant-confirm ng-if="signup_confirm && !signed_confirm"></bt-signup-restaurant-confirm>
+    <bt-signed-restaurant-confirm ng-if="signed_confirm"></bt-signed-restaurant-confirm>
+</div>

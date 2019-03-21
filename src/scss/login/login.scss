@@ -1,0 +1,40 @@
+.login_box
+{
+    position: relative;
+    width: 500px;
+    margin: auto;
+    height: 310px;
+    box-sizing: border-box;
+    margin-top: 6%;
+
+    @include respond-to(xxs){
+        width: 100%;
+    }
+
+    @include respond-to(xs){
+        width: 100%;
+    }
+
+    .reset_password{
+        margin-top: 5px;
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+.login_box .header .logo{
+    text-align: center;
+    margin-bottom: -15px;
+}
+
+.login_box .header .title{
+    text-align: center;
+    padding: 10px;
+    font-size: 28px;
+    color: white;
+}

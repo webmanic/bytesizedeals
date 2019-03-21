@@ -1,0 +1,21 @@
+<div ng-repeat="blog in blogList" class="blog">
+    <div class="content-left">
+        {{::trimUsername(blog.username)}}
+    </div>
+    <div class="content-right">
+        <div class="title">
+            <div class="username">
+                {{blog.username}}
+            </div>
+            <div class="date">
+                {{timeSince(blog.datetime)}}
+            </div>
+            <div class="stars">
+                <bt-stars rate="blog.rate"></bt-stars>
+            </div>
+        </div>
+        <div class="comment" ng-bind-html="blog.comment">
+        </div>
+    </div>
+    <bt-blog-features blog="blog" blog-list="blogList" index="$index" jwt-pay-load="jwtPayLoad" ng-if="isLoggedIn"></bt-blog-features>
+</div>

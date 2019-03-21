@@ -1,0 +1,33 @@
+<div ng-controller="searchController">
+    <div class="search" ng-class="{'input_focuses': !search_results || (search_results && restaurant_list.length == 0)}">
+        <h1 class="slogan">Bringing you the essential deals</h1>
+        <div class="search_container">
+            <input type="text" 
+                   name="search" 
+                   id="search" 
+                   ng-model="search"
+                   placeholder="Search for the title, category, postcode..." 
+                   ng-focus="search_input=true;" 
+                   ng-blur="search_input=false;" 
+                   ng-keyup="search_restaurant($event);"
+                   autocomplete="off"/>
+            <button class="search_input button_submit blue border-orange" 
+                    ng-class="{'focus': search_input}"
+                    ng-click="search_restaurant($event)">
+                <span class="search">Search</span>
+                <img ng-src="./img/icon/search.png" alt="Search" srcset="" class="icon">
+            </button>
+        </div>
+    </div>
+    <div id="restaurants-list" class="restaurants-list">
+        <bt-restaurant-list ng-repeat="restaurant in restaurant_list" ng-if="search_results && restaurant_list.length > 0" restaurant="restaurant" is-last="$last" current-day="currentDay" class="restaurant"></bt-restaurant-list>
+        <div ng-if="search_results && restaurant_list.length == 0" class="results-not-found">
+            Search results not found...
+        </div>
+        <div class="loader" ng-if="loader">
+            <img src="./img/gif/loading.gif" alt="Loading" srcset="" class="loading">
+            <div class="title">loading...</div>
+        </div>
+        <div class="clear_both"></div>
+    </div>
+</div>

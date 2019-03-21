@@ -1,0 +1,50 @@
+<div class="purchase-list">
+    <h1> 
+        Purchase History
+    </h1>
+    <div class="loader" ng-if="!loader">
+        <img src="./img/gif/loading.gif" alt="Loading" srcset="" class="loading">
+        <div class="title">loading...</div>
+    </div>
+    <div class="purchase-container" ng-if="purchaseList">
+        <div class="purchase">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th ng-if="jwtPayLoad.role.indexOf('administrator') >= 0">Paid</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="purchase in purchaseList">
+                        <td ng-click="showPurchaseInfo(purchase)">
+                            {{purchase.id}}
+                        </td>
+                        <td ng-click="showPurchaseInfo(purchase)">
+                            {{formatDate(purchase.datetime) | date:'dd/MM/yyyy'}}
+                        </td>
+                        <td ng-click="showPurchaseInfo(purchase)">
+                            {{purchase.amount | currency:"£"}}
+                            <i class="fa fa-info-circle"></i>
+                        </td>
+                        <td ng-if="jwtPayLoad.role.indexOf('administrator') >= 0">
+                            <label class="checkbox_container">
+                                <input type="checkbox" 
+                                    name="terms_and_conditions" 
+                                    id="terms_and_conditions" 
+                                    ng-model="purchase.paid"
+                                    ng-change="paidChanged(purchase)">
+                                <span class="checkmark"
+                                      ng-class="{'error_box': signup.terms_and_conditions.valid == false}"></span>
+                            </label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="title" ng-if="!resultsFound">Results Not found...</div>
+</div>
+<bt-purchase-info></bt-purchase-info>

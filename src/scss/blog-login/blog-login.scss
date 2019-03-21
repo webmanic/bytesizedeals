@@ -1,0 +1,54 @@
+.blog_login{
+    background: #0000002b;
+    padding: 10px;
+    margin-bottom: 10px;
+    form{
+        display: table;
+        width: 100%;
+    }
+    .form-group{
+        display: inline-block;
+        width: 35%;
+        vertical-align: top;
+        @include respond-to(xxs){
+            width: 50%;
+        }
+        @include respond-to(xs){
+            width: 50%;
+        }
+    }
+    input[type=text],
+    input[type=password]{
+        padding-top: 0px;
+        padding-bottom: 0px;
+        height: 55px;
+        vertical-align: top;
+    }
+    .button_submit{
+        display: inline-block;
+        width: 30%;
+        vertical-align: top;
+        margin-top: 0px;
+        height: 55px;
+        font-size: 20px;
+        border-bottom: 3px solid #f99c1c;
+        @include respond-to(xxs){
+            width: 100%;
+        }
+        @include respond-to(xs){
+            width: 100%;
+        }
+    }
+    .reset_password{
+        margin-top: 5px;
+        a{
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            clear: both;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+    }
+}

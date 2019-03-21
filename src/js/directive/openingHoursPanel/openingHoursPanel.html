@@ -1,0 +1,22 @@
+<div id="opening_hours_slider" class="collapse" ng-class="collapsed ? 'in': ''">
+    <div class="container">
+        <h3>Opening Hours:</h3>
+        <table class="opening_hours">
+            <tbody>
+                <tr ng-repeat="(key, value) in restaurant.opening_hours" ng-class="{'todays_date': key == dayLong}">
+                    <td class="day">
+                        {{key}}
+                    </td>
+                    <td class="hours">
+                        <div ng-if="value.closed">Closed</div>
+                        <div ng-if="!value.closed">{{value.from.hour}}:{{value.from.minute}} - {{value.to.hour}}:{{value.to.minute}}</div>
+                    </td> 
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="toggle_button">
+    <input type="submit" class="toggle orange-gradient" value="{{!collapsed ? 'Show Opening Hours' : 'Hide Opening Hours'}}" ng-click="showLocationPanel()"/>
+    <i class="fa" ng-class="collapsed ? 'fa-angle-up': 'fa-angle-down'" ng-click="showLocationPanel()"></i>
+</div>

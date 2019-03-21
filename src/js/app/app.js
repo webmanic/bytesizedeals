@@ -1,0 +1,1 @@
+var app = angular.module("app", ['angular-jwt', 'ui.router', 'ngStorage', 'slickCarousel', 'ngCookies', 'angular-simditor', 'ngSanitize', 'angularCroppie']);

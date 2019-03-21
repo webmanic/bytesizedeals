@@ -1,0 +1,402 @@
+<div class="signup_restaurant_form">
+    <h1>Update restaurant</h1>
+     <form ng-submit="update_submit()" model="update" id="update" autocomplete="off">
+        <div class="container-left-half">
+            <div class="form-group" ng-if="(contractNoOfDays <= 1 || contractNoOfDays < appConfig.contract_renewal) && !cashPaymentRenwal">
+                <p>
+                    <span ng-if="contractNoOfDays <= 0">Your contract has been expired on {{update.end_date}}. To extend for 1 year will cost only {{appConfig.restaurant_signup_cost | currency : '£'}}<span ng-if="appConfig.vat_tax > 0"> (including VAT)</span> for an admission fee.</span>
+                    <span ng-if="contractNoOfDays >= 1 && contractNoOfDays < appConfig.contract_renewal">Your contract is about  expired on {{update.end_date}}. To extend for 1 year <span ng-if="contractNoOfDays >= 1">(+{{contractNoOfDays}} day{{contractNoOfDays > 1 ? 's' : ''}})</span> will cost only {{appConfig.restaurant_signup_cost | currency : '£'}}<span ng-if="appConfig.vat_tax > 0"> (including VAT)</span> for an admission fee.</span>
+                    <ul>
+                        <li>
+                            Upload upto 5 gallery images
+                        </li>
+                        <li>
+                            Google Map Address Location
+                        </li>
+                        <li>
+                            Opening Hours
+                        </li>
+                        <li>
+                            User able to search by title or categories or by postcode
+                        </li>
+                        <li>
+                            Update restaurant details
+                        </li>
+                    </ul>
+                </p>
+            </div>
+            <div class="form-group">
+                <div class="form_title">Update</div>
+                <input type="text" 
+                    name="title" 
+                    id="title" 
+                    ng-class="{'error': update.title.valid == false,
+                            'valid': update.title.valid == true}" 
+                    ng-model="update.title.value" 
+                    ng-blur="validateLength('title', 1); fieldBlur('title');" 
+                    ng-focus="fieldFocus('title')" 
+                    placeholder="Title*..."
+                    autocomplete="title"
+                    maxlength="200">
+                <div class="error_info" ng-if="update.title.valid == false && update.title.error =='length'">Title character length should be more than {{update.title.length}}</div>
+            </div>
+            <div class="form-group">
+                <div ng-class="{'error': update.description.valid == false,
+                                'valid': update.description.valid == true}">
+                    <ng-simditor content="update.description.value"
+                                id="description"
+                                length="5"
+                                validate="validateLength"
+                                blur="fieldBlur"
+                                focus="fieldFocus"
+                                max="appConfig.max_description_limit"
+                                limit="true"
+                                count="true"
+                                toolbar="toolbar"></ng-simditor>
+                </div>
+                <div class="error_info" ng-if="update.description.valid == false && update.description.error =='length'">Description character length should be more than {{update.description.length}}</div>
+            </div>
+            <div class="form-group">
+                <div class="form_title">Discount</div>
+                <input type="text" 
+                    name="title" 
+                    id="title" 
+                    ng-class="{'error': update.discount.valid == false,
+                            'valid': update.discount.valid == true && update.discount.value.length > 0}" 
+                    ng-model="update.discount.value" 
+                    ng-blur="validateDiscount(); fieldBlur('discount');" 
+                    ng-focus="fieldFocus('discount')" 
+                    placeholder="Discount*..."
+                    autocomplete="discount"
+                    maxlength="200">
+                <div class="error_info" ng-if="update.discount.valid == false && update.discount.error =='length'">Title character length should be more than {{signup.title.length}}</div>
+            </div>
+            <div class="form-group">
+                <div class="form_title">Address Details</div>
+                <input type="text" 
+                    name="address_line1" 
+                    id="address_line1" 
+                    ng-class="{'error': update.address_line1.valid == false,
+                            'valid': update.address_line1.valid == true}" 
+                    ng-model="update.address_line1.value" 
+                    ng-blur="validateLength('address_line1', 5); fieldBlur('address_line1');" 
+                    ng-focus="fieldFocus('address_line1')" 
+                    placeholder="Address Line 1*..."
+                    autocomplete="address_line1"
+                    maxlength="100">
+                <div class="error_info" ng-if="update.address_line1.valid == false && update.address_line1.error =='length'">Address Line 1 character length should be more than {{update.address_line1.length}}</div>
+            </div>
+            <div class="form-group">
+                <input type="text" 
+                    name="address_line2" 
+                    id="address_line2" 
+                    ng-class="{'error': update.address_line2.valid == false,
+                                'valid': update.address_line2.valid == true && update.address_line2.value.length > 0}" 
+                    ng-model="update.address_line2.value" 
+                    ng-blur="fieldBlur('address_line2');" 
+                    ng-focus="fieldFocus('address_line2')" 
+                    placeholder="Address Line 2..."
+                    autocomplete="address_line2"
+                    maxlength="100">
+            </div>
+            <div class="form-group">
+                <input type="text" 
+                    name="address_line3" 
+                    id="address_line3" 
+                    ng-class="{'error': update.address_line3.valid == false,
+                                'valid': update.address_line3.valid == true && update.address_line3.value.length > 0}" 
+                    ng-model="update.address_line3.value" 
+                    ng-blur="fieldBlur('address_line3');" 
+                    ng-focus="fieldFocus('address_line3')" 
+                    placeholder="Address Line 3..."
+                    autocomplete="address_line3"
+                    maxlength="100">
+            </div>
+            <div class="form-group">
+                <input type="text" 
+                    name="city" 
+                    id="city" 
+                    ng-class="{'error': update.city.valid == false,
+                                'valid': update.city.valid == true}" 
+                    ng-model="update.city.value" 
+                    ng-blur="validateLength('city', 5); fieldBlur('city');" 
+                    ng-focus="fieldFocus('city')" 
+                    placeholder="City/Town*..."
+                    autocomplete="city"
+                    maxlength="50">
+                <div class="error_info" ng-if="update.city.valid == false && update.city.error =='length'">City character length should be more than {{update.city.length}}</div>
+            </div>
+            <div class="form-group">
+                <input type="text" 
+                    name="county" 
+                    id="county" 
+                    ng-class="{'error': update.county.valid == false,
+                                'valid': update.county.valid == true}" 
+                    ng-model="update.county.value" 
+                    ng-blur="validateLength('county', 5); fieldBlur('county');" 
+                    ng-focus="fieldFocus('county')" 
+                    placeholder="County*..."
+                    autocomplete="county"
+                    maxlength="50">
+                <div class="error_info" ng-if="update.county.valid == false && update.county.error =='length'">County character length should be more than {{update.city.length}}</div>
+            </div>
+            <div class="form-group">
+                <input type="text" 
+                    name="postcode" 
+                    id="postcode" 
+                    ng-class="{'error': update.postcode.valid == false,
+                                'valid': update.postcode.valid == true}" 
+                    ng-model="update.postcode.value" 
+                    ng-blur="validateLength('postcode', 5); fieldBlur('postcode');" 
+                    ng-focus="fieldFocus('postcode')" 
+                    placeholder="Postcode*..."
+                    autocomplete="postcode"
+                    maxlength="30">
+                <div class="error_info" ng-if="update.postcode.valid == false && update.postcode.error =='length'">Postcode character length should be more than {{update.postcode.length}}</div>
+            </div>
+            <div class="form-group">
+                <select name="country" 
+                        id="country" 
+                        ng-class="{'error': update.country.valid == false,
+                                    'valid': update.country.valid == true}" 
+                        ng-model="update.country.value"
+                        ng-options="country.name as country.name for country in countries"
+                        ng-blur="fieldBlur('country');" 
+                        ng-focus="fieldFocus('country')" 
+                        ng-init="update.country.value = 'United Kingdom'"
+                        autocomplete='country-name'>
+                </select>
+            </div>
+            <div class="form-group">
+                <div class="form_title">Contract Date</div>
+                <div class="opening_times contract_times">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Start Date</th>
+                                <th>End Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{update.start_date}}</td>
+                                <td>{{update.end_date}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form_title">Profile Visibility</div>
+                <div class="switch_container">
+                    <label for="">
+                        Switch ON/OFF
+                    </label>
+                    <label class="switch">
+                        <input type="checkbox" ng-model="update.profile_visible.value">
+                        <div class="slider round"><!--ADDED HTML -->
+                            <span class="on">ON</span>
+                            <span class="off">OFF</span><!--END-->
+                        </div>
+                    </label>
+                </div>
+            </div> 
+            <div class="form-group">
+                <div class="form_title">View Profile</div>
+                <a ui-sref="restaurantProfile({id:update.restaurant_id.value})" target="_blank" class="external_link">My Profile</a>
+            </div>
+        </div>
+        <div class="container-right-half">
+            <div class="form-group">
+                <div class="form_title">Contact Information</div>
+                <input type="text" 
+                    name="telephone_no" 
+                    id="telephone_no" 
+                    ng-class="{'error': update.telephone_no.valid == false,
+                                'valid': update.telephone_no.valid == true}" 
+                    ng-model="update.telephone_no.value" 
+                    ng-blur="validateNumber('telephone_no', true); fieldBlur('telephone_no');" 
+                    ng-focus="fieldFocus('telephone_no')" 
+                    placeholder="Telephone Number*..."
+                    autocomplete="telephone_no"
+                    maxlength="50"
+                    validate-input="telephone">
+                <div class="error_info" ng-if="update.telephone_no.valid == false && update.telephone_no.error =='number_not_valid'">Telephone number not valid</div>
+            </div>
+            <div class="form-group">
+                <input type="text" 
+                    name="mobile_no" 
+                    id="mobile_no" 
+                    ng-class="{'error': update.mobile_no.valid == false,
+                                'valid': update.mobile_no.valid == true && update.mobile_no.value.length > 0}" 
+                    ng-model="update.mobile_no.value" 
+                    ng-blur="validateNumber('mobile_no', false); fieldBlur('mobile_no');" 
+                    ng-focus="fieldFocus('mobile_no')" 
+                    placeholder="Mobile Number..."
+                    autocomplete="mobile_no"
+                    maxlength="50"
+                    validate-input="telephone">
+                <div class="error_info" ng-if="update.mobile_no.valid == false && update.mobile_no.error =='number_not_valid'">Mobile number not valid</div>
+            </div>
+            <div class="form-group">
+                <input type="text" 
+                    name="link" 
+                    id="link" 
+                    ng-class="{'error': update.link.valid == false,
+                            'valid': update.link.valid == true && update.link.value.length > 0}" 
+                    ng-model="update.link.value" 
+                    ng-blur="validateUrl(); fieldBlur('link');" 
+                    ng-focus="fieldFocus('link')" 
+                    placeholder="Your resturant link..."
+                    autocomplete="link"
+                    maxlength="500">
+                <div class="error_info" ng-if="update.link.valid == false && update.link.error =='invalid'">Link URL is invalid</div>
+            </div>
+            <div class="form-group"> 
+                <div class="form_title">Upload Logo* <i class="fa fa-info-circle" tooltip tooltip-title="Logo image will crop by {{appConfig.image_size.width}}w x {{appConfig.image_size.height}}h"></i></div>
+                <div class="cropped-container" ng-show="cropped.source">
+                    <croppie ng-if="cropped.source" src="cropped.source" ng-model="cropped.image" options="cropOption" image-type="png" image-size="imageSize">
+                    </croppie>
+                    <span class="title" ng-if="update.logo.value.name">
+                        {{update.logo.value.name}}
+                    </span>
+                    <a ng-href="{{cropped.image}}" data-featherlight="image" class="preview" tooltip tooltip-title="Preview logo">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="custom-input-file"
+                        ng-class="{'error': update.logo.valid == false,
+                                'valid': update.logo.valid == true}">
+                    <input type="file" 
+                        name="logoImage" 
+                        id="logoImage" 
+                        class="inputfile inputfile-6 hidden" 
+                        onchange="angular.element(this).scope().imageLoaded(this);"
+                        accept="image/x-png,image/jpeg">
+                    <label for="logoImage">
+                        <span class="placeholder">Upload Logo*</span>        
+                        <strong>Choose a file&hellip;</strong>
+                    </label>
+                </div>
+                <div class="error_info" ng-if="update.logo.valid == false && update.logo.error.message =='invalid'">Image size must be ({{update.logo.error.reason.width}} Width x {{update.logo.error.reason.height}} Height)*</div>
+                <div class="error_info" ng-if="update.logo.valid == false && update.logo.error.message =='empty'">Please upload file</div>
+            </div>
+            <div class="form-group"> 
+                <div class="form_title">Upload Gallery</div>
+                <div class="image_upload" ng-if="galleryCount > 0">
+                    <table>
+                        <tbody>
+                            <tr ng-repeat="gallery in update.gallery.value">
+                                <td width="25%">
+                                    <a ng-href="{{gallery.img}}" data-featherlight="image">
+                                        <img ng-src="{{gallery.img}}" alt=""/>
+                                    </a>
+                                </td>
+                                <td width="65%">
+                                    <div class="title">{{gallery.name}}</div>
+                                    <small ng-class="{'error': gallery.size > appConfig.max_gallery_size_upload}">{{gallery.size}}MB <span ng-if="gallery.size > 1">(File size must be up to {{appConfig.max_gallery_size_upload}}MB)</span></small>
+                                </td>
+                                <td width="10%">
+                                    <i class="fa fa-close" ng-click="removeGallery(gallery.index)" tooltip tooltip-title="Remove image"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>  
+                </div>
+                <div class="custom-input-file"
+                    ng-class="{'error': update.gallery.valid == false,
+                                'valid': update.gallery.valid == true}"
+                    ng-if="galleryCount < 5">
+                    <input type="file" 
+                        name="galleryImage" 
+                        id="galleryImage" 
+                        class="inputfile inputfile-6 hidden" 
+                        onchange="angular.element(this).scope().galleryLoaded(this);"
+                        accept="image/x-png,image/jpeg"
+                        multiple="multiple"/>
+                    <label for="galleryImage">
+                        <span class="placeholder">Upload Gallery...</span>          
+                        <strong ng-if="galleryCount == 0">Choose a file&hellip;</strong>
+                        <strong ng-if="galleryCount > 0">Upload more&hellip;</strong>
+                    </label>
+                </div>
+                <div class="error_info" ng-if="update.gallery.valid == false && update.gallery.error.message =='max'">Maximum upload up to 5</div>
+                <div class="error_info" ng-if="update.gallery.valid == false && update.gallery.error.message =='big'">Gallery image size too big</div>
+            </div>
+            <div class="form-group">
+                <div class="form_title">Opening hours</div>
+                <div class="opening_times">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td width="10%">Days</td>
+                                <td width="85%"><center>Times (From - To)</center></td>
+                                <td width="5%">Closed</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="(key, value) in update.opening_hours">
+                                <td class="days">
+                                    {{key}}
+                                </td>
+                                <td class="times" ng-if="!value.closed">
+                                    <select ng-model="update.opening_hours[key].from.hour" 
+                                            ng-options="x for x in hours" 
+                                            ng-init="update.opening_hours[key].from.hour = '00'"
+                                            class="select_hour">
+                                        <option>HH</option>
+                                    </select> :
+                                    <select ng-model="update.opening_hours[key].from.minute" 
+                                            ng-options="x for x in minutes"
+                                            ng-init="update.opening_hours[key].from.minute = '00'"
+                                            class="select_minute">
+                                        <option>MM</option>
+                                    </select>
+                                    -
+                                    <select ng-model="update.opening_hours[key].to.hour" 
+                                            ng-options="x for x in hours"
+                                            ng-init="update.opening_hours[key].to.hour = '00'"
+                                            class="select_hour">
+                                    </select> :
+                                    <select ng-model="update.opening_hours[key].to.minute" 
+                                            ng-options="x for x in minutes"
+                                            ng-init="update.opening_hours[key].to.minute = '00'"
+                                            class="select_minute">
+                                    </select>
+                                </td>
+                                <td class="times" ng-if="value.closed">
+                                    <center>CLOSED</center>
+                                </td>
+                                <td class="closed">
+                                    <input type="checkbox" ng-model="value.closed"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form_title">Categories</div>
+                <div class="checkbox-form"
+                    ng-class="{'error': update.categories.valid == false,
+                                'valid': update.categories.valid == true}">
+                    <div class="check" ng-repeat="category in categories">
+                        <input type="checkbox" ng-model="update.categories.checked[category]" ng-click="categoriesCheckbox(category, update.categories.checked[category])" value="{{category}}"/> {{category}}
+                    </div>
+                </div>
+                <div class="error_info" ng-if="update.categories.valid == false && update.categories.error =='length'">Select at least one category</div>
+            </div>
+            <div class="form-group" ng-if="contractNoOfDays >= 1 || cashPaymentRenwal">
+                <button type="submit" class="button_submit blue">
+                    Update
+                    <img class="buffer" src="./img/gif/buffer.gif" ng-if="loader"/>
+                </button>
+            </div>
+            <div class="form-group" ng-if="contractNoOfDays < appConfig.contract_renewal && !cashPaymentRenwal">
+                <div class="form_title">Renew for just {{appConfig.restaurant_signup_cost | currency : '£'}} (1 year contract)</div>
+                <bt-cash-payment form-is-valid="formIsValid" form="update"></bt-cash-payment>
+                <bt-paypal-buynow form-is-valid="formIsValid" form="update"></bt-paypal-buynow>
+            </div>
+        </div>
+    </form>  
+</div>

@@ -1,0 +1,124 @@
+@import 'global/global';
+
+.restaurants-list{
+    display: flex;
+    flex-flow: wrap;
+    clear: both;
+    width: 102%;
+    margin-left: -1%;
+    .restaurant{
+        position: relative;
+        margin: 1%;
+        background: #0100045c;
+        flex-basis: 23%;
+        cursor: pointer;
+        .container{
+            padding: 0px;
+            .container_top{
+                position: relative;
+                width: 100%;
+                overflow: hidden;
+                .logo{
+                    img{
+                        display: block;
+                        width: 100%;
+                        background: #00000033;
+                        max-width: 100%;
+                        width: auto;
+                        height: auto;
+                        position: relative;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                    }
+                }
+                .stars{
+                    position: absolute;
+                    font-size: 14px;
+                    top: 0px;
+                    right: 0px;
+                    background: #29241c87;
+                    padding: 2px;
+                    z-index: 1;
+                    .star{
+                        float: left;
+                        margin: 2px;
+                    }
+                }
+                .distance{
+                    position: absolute;
+                    right: 0px;
+                    bottom: 0px;
+                    background: #29241c87;
+                    padding: 5px;
+                    font-size: 14px;
+                    z-index: 1;
+                }
+            }
+            .container_bottom{
+                box-sizing: border-box;
+                padding: 10px;
+                .title{
+                    font-size: 20px;
+                }
+                .categories{
+                    span{
+                        background: #0089ff;
+                        padding: 2px;
+                        padding-left: 3px;
+                        padding-right: 3px;
+                        margin-right: 5px;
+                        float: left;
+                        border-radius: 50px;
+                    }
+                }
+                .closed{
+                    color: white;
+                    font-weight: bold;
+                    background: red;
+                    padding: 2px;
+                    padding-left: 3px;
+                    padding-right: 3px;
+                    border-radius: 50px;
+                }
+                p, .categories{
+                    margin-top: 0px;
+                    margin-bottom: 10px;
+                    font-size: 12px;
+                    display: table;
+                }
+                p:last-child{
+                    padding-bottom: 0px;
+                    margin-bottom: 0px;
+                }
+            }
+        }
+        .marker{
+            color: #f99c1c;
+        }
+        @include respond-to(md){
+            flex-basis: 31.33%;
+        }
+        @include respond-to(sm){
+            flex-basis: 48%;
+        }
+        @include respond-to(xs){
+            flex-basis: 48%;
+        }
+        @include respond-to(xxs){
+            flex-basis: 100%;
+        }
+    }
+    .restaurant:hover{
+        box-shadow: 0px 0px 5px #ffffff52
+    }
+    .results-not-found{
+        margin-top: 20px;
+        text-align: center;
+        color: white;
+        font-size: 20px;
+        width: 100%;
+    }
+}

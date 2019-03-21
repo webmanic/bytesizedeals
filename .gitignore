@@ -1,0 +1,12 @@
+resource/logo
+resource/gallery
+#bower_components/
+node_modules/
+package-lock.json
+/js/
+/css/
+/favicon/
+/img/
+/view/
+/template/
+/index.html

@@ -1,0 +1,9 @@
+<div class="blog_list" ng-if="blogList.length > 0">
+    <bt-blog-comment blog-list="blogList" jwt-pay-load="jwtPayLoad" is-logged-in="isLoggedIn"></bt-blog-comment>
+    <div class="load_more" ng-if="rowNo > 1 && rowNo != pageNo">
+        <button role="submit" class="button_submit blue" ng-click="loadMore()">
+            Load More...
+            <img class="buffer" src="./img/gif/buffer.gif" ng-if="loaderBlog"/>
+        </button>
+    </div>
+</div>

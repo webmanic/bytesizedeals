@@ -1,0 +1,29 @@
+.featherlight .featherlight-content{
+    padding: 0px !important;
+    padding: 10px !important;
+    border: 3px solid #f99c1c1f !important;
+    background: black !important;
+}
+.featherlight .featherlight-close-icon{
+    background: transparent !important;
+    color: white !important;
+}
+.featherlight .featherlight-close-icon{
+    position: fixed !important;
+    display: inline-block !important;
+    color: transparent !important;
+    background-repeat: no-repeat !important;
+    font: normal normal normal 14px/1 FontAwesome !important;
+    font-size: inherit !important;
+    text-rendering: auto !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    right: 10px !important;
+    font-size: 24px !important;
+    top: 10px !important;
+    cursor: pointer !important;
+}
+.featherlight .featherlight-close-icon::before{
+    content: "\f00d" !important;
+    color: white !important;
+}

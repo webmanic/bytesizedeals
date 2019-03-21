@@ -1,0 +1,15 @@
+.wish{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background: #29241c87;
+    padding: 2px;
+    font-size: 14px;
+    z-index: 1;
+    .fa-wish{
+        color: #ffa5023d;
+    }
+    .fa-wish.active{
+        color: orange;
+    }
+}

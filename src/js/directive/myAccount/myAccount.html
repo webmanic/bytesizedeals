@@ -1,0 +1,67 @@
+<div class="signup_form myaccount_form">   
+        <div class="container-left">
+            <h1>My Account</h1>
+            <p>
+                Welcome to your dashboard, you can view your account.
+            </p>
+        </div>
+        <div class="container-right">
+            <form id="myAccount" autocomplete="off">
+                <div class="form-group">
+                    <label for="id">ID:</label>
+                    <input type="text" 
+                        name="id" 
+                        id="id" 
+                        ng-value="myAccount.id"
+                        disabled>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" 
+                        name="username" 
+                        id="username" 
+                        ng-value="myAccount.username"
+                        disabled>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="text" 
+                        name="email" 
+                        id="email" 
+                        ng-value="myAccount.email"
+                        disabled>
+                </div>
+                <div class="form-group">
+                    <label for="firstname">Firstname:</label>
+                    <input type="text" 
+                        name="firstname" 
+                        id="firstname" 
+                        ng-model="myAccount.firstname"
+                        disabled>
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Lastname:</label>
+                    <input type="text" 
+                        name="lastname" 
+                        id="lastname" 
+                        ng-model="myAccount.lastname"
+                        disabled>
+                </div>
+                <div class="form-group">
+                    <label for="role">Role:</label>
+                    <div class="button_select" ng-class="{'active': myAccount.role.indexOf('blog') != -1}">
+                        <img src="./img/icon/comment.png" alt="Comment" class="icon">
+                        <div>Comment</div>
+                    </div>
+                    <div class="button_select" ng-class="{'active': myAccount.role.indexOf('restaurant') != -1}">
+                        <img src="./img/icon/restaurant.png" alt="Restaurant" class="icon">
+                        <div>Restaurant</div>
+                    </div>
+                    <div class="button_select" ng-class="{'active': myAccount.role.indexOf('administrator') != -1}">
+                        <img src="./img/icon/man.png" alt="Restaurant" class="icon">
+                        <div>Administrator</div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div> 

@@ -1,0 +1,78 @@
+.search{
+    margin: auto;
+    text-align: center;
+    
+    h1.slogan{
+        text-align: center;
+        font-size: 50px;
+        margin-bottom: 10px;
+        @include respond-to(xxs){
+            font-size: 40px;
+        }
+    }
+
+    .search_container{
+        position: relative;
+        display: table;
+        width: 100%;
+        margin: auto;
+        @include respond-to(md){
+            width: 782px;
+        }
+        @include respond-to(lg){
+            width: 782px;
+        }
+        input[type=text]{
+            display: inline-block;
+            width: 80%;
+            padding-right: 20px;
+            vertical-align: top;
+            @include respond-to(xs){
+                width: 85%;
+            }
+            @include respond-to(xxs){
+                width: 85%;
+            }
+        }
+        .search_input{
+            position: relative;
+            display: inline-block;
+            width: 20%;
+            vertical-align: top;
+            @include respond-to(xs){
+                width: 15%;
+            }
+            @include respond-to(xxs){
+                width: 15%;
+            }
+        }
+        span.search{
+            @include respond-to(xs){
+                display: none;
+            } 
+            @include respond-to(xxs){
+                display: none;
+            } 
+        }
+        .icon{
+            position: absolute;
+            width: 24px;
+            margin-left: 10px;
+            left: 0px;
+            right: 0px;
+            top: 18px;
+            margin: auto;
+            display: none;
+            @include respond-to(xs){
+                display: block;
+            }
+            @include respond-to(xxs){
+                display: block;
+            }
+        }
+    }
+}
+.search.input_focuses
+{
+    margin-top: 20%;
+}

@@ -1,0 +1,13 @@
+Options -Indexes 
+ErrorDocument 403 https://www.bytesizedeals.co.uk/#/
+ErrorDocument 404 https://www.bytesizedeals.co.uk/#/
+ErrorDocument 405 https://www.bytesizedeals.co.uk/#/
+
+#ErrorDocument 403 http://localhost/#/
+#ErrorDocument 404 http://localhost/#/
+#ErrorDocument 405 http://localhost/#/
+
+RewriteEngine On 
+RewriteCond %{SERVER_PORT} 80 
+RewriteRule ^(.*)$ https://www.bytesizedeals.co.uk/$1 [R,L]
+#RewriteRule ^(.*)$ http://localhost/#/$1 [R,L]

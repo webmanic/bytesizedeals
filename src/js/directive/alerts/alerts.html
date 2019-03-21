@@ -1,0 +1,9 @@
+<div class="alerts">
+    <div ng-repeat="alert in alerts" class="container {{alert.class}}">
+        <!-- {{alert.message}} -->
+        <div ng-bind-html="trustAsHtmlFun(alert.message)" compile-template></div>
+        <div class="close" ng-click="close(alert.id)">
+            <img src="./img/icon/cancel.png" alt="close" srcset="">
+        </div>
+    </div>
+</div>

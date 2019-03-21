@@ -1,0 +1,26 @@
+.signup_confirm{
+    margin-top: 11%;
+    .container{
+        clear: both;
+        text-align: center;
+        img{
+            width: 200px;
+            margin-bottom: 15px;
+            @include respond-to(xxs){
+                width: 130px;
+            }
+        }
+        p{
+            font-size: 24px;
+            color: white;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        a:hover{
+            color: white;
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,0 +1,127 @@
+@import 'transition/transition';
+@import 'global/global';
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=file]{
+    width: 100%;
+    padding: $input_padding;
+    box-sizing: border-box;
+    height: 60px;
+    background: #ffffff91;
+    border: none;
+    font-size: 16px;
+    border-bottom: 3px solid #f99c1c;
+}
+
+textarea{
+    width: 100%;
+    padding: 15px;
+    background: #ffffff91;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin: 0px;
+    border: none;
+    border-bottom: 3px solid #f99c1c;
+    margin-bottom: -4px;
+    min-height: 177px;
+    resize: vertical;
+}
+
+textarea:focus,
+select:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus{
+    border-bottom: 3px solid #0089ff;
+}
+
+.simditor.error,
+textarea.error,
+input[type=text].error,
+input[type=password].error,
+input[type=email].error{
+    border-bottom: 3px solid #ff0000;
+}
+
+.simditor.valid,
+textarea.valid,
+select.valid,
+input[type=text].valid,
+input[type=password].valid,
+input[type=email].valid{
+    border-bottom: 3px solid #00b717;
+}
+
+textarea,
+input,
+select{
+    outline:none;
+}
+
+pre{
+    background: black;
+    color: white;
+    clear: both;
+}
+
+.clear_both{
+    clear: both;
+}
+
+select{
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 0px;
+    font-size: 16px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    border-bottom: 3px solid #f99c1c;
+    background-color: #ffffff91;
+    background-image: url('../img/icon/arrow-down.png');
+    background-repeat: no-repeat; 
+    background-position: center right 10px;
+}
+
+.hidden{
+    display: none;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $placeholder;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $placeholder;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: $placeholder;
+}
+
+.non_click{
+    cursor: default !important;
+}
+
+a{
+    color: white;
+}
+a:hover{
+    text-decoration: none;
+}
+
+blockquote{
+    border-left: 6px solid #ddd;
+    padding: 5px 0 5px 10px;
+    margin: 15px 0 15px 15px;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin-top: 0px;
+    margin-bottom: 10px;
+}

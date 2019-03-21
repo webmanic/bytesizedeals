@@ -1,0 +1,127 @@
+<div class="signup_form">   
+    <div class="container-left">
+        <h1>To post review or post your restaurant please signup</h1>
+        <p>
+            If you want to share your view about the experience you had with restaurants please do signup.
+        </p>
+        <p>
+            Your own restaurant would like to advertise with us please do signup and then register your restaurant for just <b>&pound;{{appConfig.restaurant_signup_cost}}</b><small ng-if="appConfig.vat_tax > 0">including VAT</small> (1 year contract).
+        </p>
+    </div>
+    <div class="container-right">
+        <form ng-submit="signup_submit(signup)" model="signup" id="signup" autocomplete="off">
+            <div class="form-group">
+                <input type="text" 
+                    name="username" 
+                    id="username" 
+                    ng-class="{'error': signup.username.valid == false,
+                            'valid': signup.username.valid == true}" 
+                    ng-model="signup.username.value" 
+                    ng-blur="validateLength('username', 5); fieldBlur('username');" 
+                    ng-focus="fieldFocus('username')" 
+                    placeholder="Username..."
+                    autocomplete="username">
+                <div class="error_info" ng-if="signup.username.valid == false && signup.username.error =='length'">Username character length should be more than {{signup.username.length}}</div>
+                <div class="error_info" ng-if="signup.username.valid == false && signup.username.error =='exists'">Username already taken</div>
+            </div>
+            <div class="form-group">
+                <input type="password" 
+                    name="password" 
+                    id="password" 
+                    ng-class="{'error': signup.password.valid == false,
+                            'valid': signup.password.valid == true}" 
+                    ng-model="signup.password.value"
+                    ng-blur="validateLength('password', 5); validateConfirmPassword(true); fieldBlur('password');" 
+                    ng-focus="fieldFocus('password')"  
+                    placeholder="Password..."
+                    autocomplete="password">
+                <div class="error_info" ng-if="signup.password.valid == false && signup.password.error =='length'">Password character length should be more than {{signup.username.length}}</div>
+            </div>
+            <div class="form-group">
+                <input type="password" 
+                    name="confirm_password" 
+                    id="confirm_password" 
+                    ng-class="{'error': signup.confirm_password.valid == false, 
+                                'valid': signup.confirm_password.valid == true}" 
+                    ng-model="signup.confirm_password.value"
+                    ng-blur="validateConfirmPassword(); fieldBlur('confirm_password');" 
+                    ng-focus="fieldFocus('confirm_password')"   
+                    placeholder="Confirm Password..."
+                    autocomplete="confirm_password">
+                <div class="error_info" ng-if="signup.confirm_password.valid == false">Password does not match</div>
+            </div>
+            <div class="form-group">
+                <input type="text" 
+                    name="email" 
+                    id="email" 
+                    ng-class="{'error': signup.email.valid == false,
+                                'valid': signup.email.valid == true}"  
+                    ng-model="signup.email.value" 
+                    ng-blur="validateEmail(); fieldBlur('email');" 
+                    ng-focus="fieldFocus('email')" 
+                    placeholder="Email..."
+                    autocomplete="email">
+                <div class="error_info" ng-if="signup.email.valid == false && signup.email.error =='email_not_valid'">Email is not valid</div>
+                <div class="error_info" ng-if="signup.email.valid == false && signup.email.error =='exists'">Email already taken</div>
+            </div>
+            <div class="form-group">
+                <input type="text" 
+                    name="firstname" 
+                    id="firstname" 
+                    ng-class="{'error': signup.firstname.valid == false,
+                                'valid': signup.firstname.valid == true}"  
+                    ng-model="signup.firstname.value" 
+                    ng-blur="validateLength('firstname', 1); fieldBlur('firstname');" 
+                    ng-focus="fieldFocus('firstname')"  
+                    placeholder="Firstname..."
+                    autocomplete="firstname">
+                <div class="error_info" ng-if="signup.firstname.valid == false && signup.firstname.error =='length'">Your firstname character length should be more than {{signup.firstname.length}}</div>
+            </div>
+            <div class="form-group">
+                <input type="text" 
+                    name="lastname" 
+                    id="lastname" 
+                    ng-class="{'error': signup.lastname.valid == false,
+                                'valid': signup.lastname.valid == true}"  
+                    ng-model="signup.lastname.value" 
+                    ng-blur="validateLength('lastname', 1); fieldBlur('lastname');" 
+                    ng-focus="fieldFocus('lastname')" 
+                    placeholder="Lastname..."
+                    autocomplete="lastname">
+                <div class="error_info" ng-if="signup.lastname.valid == false && signup.lastname.error =='length'">Your lastname character length should be more than {{signup.lastname.length}}</div>
+            </div>
+            <div class="form-group">
+                <div class="form_title">Select Type</div>
+                <div class="button_select" ng-class="{'error': signup.type.valid == false,
+                                                      'active': signup.type.value == 'blog'}" ng-click="selected_type('blog')">
+                    <img src="./img/icon/comment.png" alt="Comment" class="icon">
+                    <div>Comment</div>
+                </div>
+                <div class="button_select" ng-class="{'error': signup.type.valid == false,
+                                                      'active': signup.type.value == 'restaurant'}" ng-click="selected_type('restaurant')">
+                    <img src="./img/icon/restaurant.png" alt="Restaurant" class="icon">
+                    <div>Restaurant</div>
+                </div>
+                <div class="error_info" ng-if="signup.type.valid == false">Please select type</div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="button_submit blue">
+                    Submit
+                    <img class="buffer" src="./img/gif/buffer.gif" ng-if="loader"/>
+                </button>
+                <div class="terms-and-condition">
+                    <label class="checkbox_container">
+                        <input type="checkbox" 
+                            name="terms_and_conditions" 
+                            id="terms_and_conditions" 
+                            ng-model="signup.terms_and_conditions.value"
+                            ng-change="validateTermsAndConditions()">
+                        <span class="checkmark"
+                              ng-class="{'error_box': signup.terms_and_conditions.valid == false}"></span>
+                    </label>
+                    I agree with <a ui-sref="{{appPath.termsAndConditions.name}}" target="_blank">Terms & Conditions</a> and <a ui-sref="{{appPath.privacyPolicy.name}}" target="_blank">Privacy Policy.</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div> 

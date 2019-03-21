@@ -1,0 +1,143 @@
+.approval-list{
+    .restaurant{
+        flex-basis: 50%;
+        .container{
+            display: flex;
+            .container_top{
+                flex-basis: 40%;
+                .logo{
+                    img{
+                        position: absolute;
+                    }
+                }
+            }
+            .container_bottom{
+                flex-basis: 60%;
+            }
+        }
+        @include respond-to(md){
+            flex-basis: 50%;
+        }
+        @include respond-to(sm){
+            flex-basis: 100%;
+        }
+        @include respond-to(xs){
+            flex-basis: 100%;
+        }
+        @include respond-to(xxs){
+            flex-basis: 100%;
+        }
+    }
+
+    .confirm{
+        display: table;
+        width: 100%;
+        font-size: 16px;
+        button{
+            padding: 5px;
+            border: none;
+            width: 49%;
+            vertical-align: top;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button.yes{
+            margin-right: 1%;
+            background: #256171;
+            color: white;
+        }
+        button.no{
+            margin-left: 1%;
+            background: red;
+            color: white;
+        }
+    }
+    .close{
+        position: absolute;
+        right: 0px;
+        font-size: 24px;
+        top: 0px;
+        cursor: pointer;
+    }
+}
+
+.approval{
+    .info-icon{
+        float: right;
+        cursor: pointer;
+    }
+    .approval-modal{
+        position: fixed;
+        display: block;
+        padding: 15px;
+        z-index: 1000;
+        top: 1%;
+        bottom: 1%;
+        max-width: 500px;
+        min-width: 300px;
+        width: auto;
+        left: 15px;
+        right: 15px;
+        margin: auto;
+        height: 90%;
+        overflow: auto;
+        background: black;
+        border: 3px solid #f99c1c1f;
+        box-sizing: border-box;
+        cursor: default;
+        .container{
+            position: relative;
+            display: block;
+            .container-left{
+                width: 100%;
+                padding: 0px;
+            }
+            .container-right{
+                width: 100%;
+                padding: 0px;
+            }
+        }   
+    }
+    .categories h3{
+        margin-top: 0px;
+    }
+}
+
+.galleries{
+    .gallery{
+        .container{
+            img{
+                @include respond-to(lg){
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+    .slick-slider{
+        .slick-list{
+            .slick-track{
+                .slick-slide{
+                    .image{
+                        img{
+                            @include respond-to(lg){
+                                width: 100%;
+                                height: auto;
+                            }
+                        }
+                        @include respond-to(lg){
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                    @include respond-to(lg){
+                        height: auto;
+                    }
+                }
+            }
+        }
+        @include respond-to(lg){
+            padding-bottom: 4px;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+.stars{
+    .star{
+        float: left;
+        color: #ffa5023d;;
+    }
+    .star.clickable{
+        cursor: pointer;
+    }
+    .star_checked {
+        color: orange;
+    }
+}

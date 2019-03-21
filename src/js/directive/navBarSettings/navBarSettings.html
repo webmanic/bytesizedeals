@@ -1,0 +1,10 @@
+<ul id="sub_menu">
+    <li><a href="" ng-click="settings()"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
+    <ul class="sub_menu">
+        <li ng-show="wishListCount > 0"><a ui-sref="wishList" ui-sref-active="active">Wish list</a></li>
+        <li ng-show="jwtPayLoad.role.indexOf('administrator') >= 0"><a ui-sref="restaurantApproval" ui-sref-active="active">Approval List</a></li>
+        <li ng-show="jwtPayLoad && !restaurantSignup && jwtPayLoad.role.indexOf('restaurant') >= 0"><a ui-sref="{{appPath.restaurantProfile.name}}({id:restaurantId})" ui-sref-active="active">My Profile</a></li>
+        <li ng-show="jwtPayLoad && !restaurantSignup && jwtPayLoad.role.indexOf('restaurant') >= 0 || jwtPayLoad.role.indexOf('administrator') >= 0"><a ui-sref="{{appPath.purchaseHistory.name}}" ui-sref-active="active">Purchase History</a></li>
+        <li ng-show="jwtPayLoad"><a ui-sref="myAccount" ui-sref-active="active">My Account</a></li>
+    </ul>
+</ul> 

@@ -1,0 +1,10 @@
+<div class="wish_list_form">
+    <h1>Wish List</h1>
+    <div class="restaurants-list wish-list">
+        <bt-wish-list-restaurant restaurant="list" ng-repeat="list in wishList" class="restaurant"></bt-wish-list-restaurant>
+        <div class="load_more" ng-if="rowNo > 0 && pageNo != rowNo">
+            <input type="button" value="Load More..." class="button_submit blue" ng-click="load_more()"/>
+        </div>
+        <div class="clear_both"></div>
+    </div>
+</div>

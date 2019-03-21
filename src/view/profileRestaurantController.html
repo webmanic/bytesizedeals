@@ -1,0 +1,46 @@
+<div ng-controller="profileRestaurantController" class="restaurant-profile">
+    <div class="container-left">
+        <div class="logo">
+            <img src="{{appConfig.domain + restaurant.logo}}" imageonload="doThis(appConfig.domain + restaurant.logo)"/>
+        </div>
+        <bt-location-panel restaurant="restaurant" ng-if="restaurant"></bt-location-panel>
+        <bt-contact-info-panel restaurant="restaurant" ng-if="restaurant"></bt-contact-info-panel>
+        <bt-opening-hours-panel restaurant="restaurant" ng-if="restaurant"></bt-opening-hours-panel>
+        <bt-discount-panel restaurant="restaurant" ng-if="restaurant && restaurant.discount.length > 0"></bt-discount-panel>
+        <div class="form-group" ng-if="contractNoOfDays < appConfig.contract_renewal && !cashPaymentRenwal">
+            <div class="form_title">Renew for just {{appConfig.restaurant_signup_cost | currency : '£'}}<small ng-if="appConfig.var_tax > 0"> including VAT</small> (1 year contract)</div>
+            <bt-cash-payment form-is-valid="true" form="restaurant" ng-if="restaurant"></bt-cash-payment>
+            <bt-paypal-buynow form-is-valid="true" form="restaurant"></bt-paypal-buynow>
+        </div>
+    </div>
+    <div class="container-right">
+        <h1 class="title">
+            {{restaurant.title}}
+        </h1>
+        <div class="star_reviewes">
+            <bt-stars rate="restaurant.rate/restaurant.review" class="stars"></bt-stars>
+            <span class="title">
+                ({{restaurant.review}} reviews)
+            </span>
+        </div>
+        <h3>Description:</h3>
+        <div class="description" ng-bind-html="to_trusted(restaurant.description)"></div>
+        <p class="description">
+            Last updated: {{formatDate(restaurant.datetime) | date:'dd/MM/yyyy'}}.
+        </p>
+        <div class="categories">
+            <h3>Categories:</h3>
+            <div ng-repeat="category in restaurant.categories" 
+                 class="category non_click">
+                {{category}}
+            </div>
+            <div class="clear_both"></div>
+        </div>
+        <div class="link" ng-if="restaurant.link">
+            <h3>Link:</h3>
+            <a href="{{restaurant.link}}" target="_blank" class="external_link">Visit {{restaurant.title}}</a>
+        </div>
+        <bt-restaurant-gallery galleries="restaurant.gallery" ng-if="restaurant.gallery.length > 0"></bt-restaurant-gallery>
+        <bt-blog-restaurant restaurant-id="restaurant.id" ng-if="restaurant"></bt-blog-restaurant>
+    </div>
+</div>

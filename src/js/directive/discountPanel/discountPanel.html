@@ -1,0 +1,12 @@
+<div id="qrcode_slider" class="collapse qrcode" ng-class="collapsed ? 'in': ''">
+    <div class="container">
+        <div id="qrcode"></div>
+        <p>
+            <span>{{restaurant.discount}}</span>
+        </p>
+    </div>
+</div>
+<div class="toggle_button">
+    <input type="submit" class="toggle orange-gradient" value="{{!collapsed ? 'Show Discount' : 'Hide Discount'}}" ng-click="showLocationPanel()"/>
+    <i class="fa" ng-class="collapsed ? 'fa-angle-up': 'fa-angle-down'" ng-click="showLocationPanel()"></i>
+</div>

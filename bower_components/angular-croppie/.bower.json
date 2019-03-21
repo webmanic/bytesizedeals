@@ -1,0 +1,15 @@
+{
+  "name": "angular-croppie",
+  "homepage": "https://github.com/lpsBetty/angular-croppie",
+  "version": "1.0.3",
+  "_release": "1.0.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.3",
+    "commit": "d0153fb14efc225a62cb4048b4fbe137c46cfe2f"
+  },
+  "_source": "https://github.com/lpsBetty/angular-croppie.git",
+  "_target": "^1.0.3",
+  "_originalSource": "angular-croppie",
+  "_direct": true
+}

@@ -1,0 +1,127 @@
+.purchase-list{
+    .purchase-container{
+        .purchase{
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            
+            td, th {
+                padding: 5px;
+            }
+
+            thead{
+                th {
+                    text-align: left;
+                    background-color: #3a8ee8;
+                    color: white;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+    
+                th:last-child{
+                    text-align: right
+                }
+            }
+            
+            tbody{
+                color: black;
+                tr{
+                    cursor: pointer;
+                }
+                tr:nth-child(odd){
+                    background-color: #ec8b40;
+                }
+                tr:nth-child(even){
+                    background-color: #eeb990;
+                }
+                tr:hover{
+                    opacity: 0.8;
+                }
+                td{
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+                td:last-child{
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+
+.subscribe.purchase{
+    top: 28%;
+    overflow-y: auto;
+    @include respond-to(xxs){
+        zoom: 0.8;
+    }
+}
+
+@media only screen and (max-height: 600px) {
+    .subscribe.purchase {
+        top: 10%;
+        height: 80%;
+        overflow-y: auto;
+    }
+}
+
+.subscribe.admin-purchase{
+    top: 10%;
+    overflow-y: auto;
+    @include respond-to(xxs){
+        zoom: 0.7;
+    }
+}
+
+@media only screen and (max-height: 740px) {
+    .subscribe.admin-purchase {
+        top: 2%;
+        height: 95%;
+        overflow-y: auto;
+    }
+}
+
+.purchase-table{
+    .text-center{
+        text-align: center !important;
+        border-bottom: 1px dashed #9c9c9c;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    td, th {
+        padding: 5px;
+    }
+
+    thead{
+        th {
+            text-align: left;
+            background-color: #6b6b6b;
+            color: white;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        th:last-child{
+            text-align: right
+        }
+    }
+    
+    tbody{
+        color: black;
+        tr{
+            background-color: #ffffff;
+        }
+
+        td{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        td:last-child{
+            text-align: right;
+        }
+    }
+}

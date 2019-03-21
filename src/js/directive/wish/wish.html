@@ -1,0 +1,10 @@
+<div class="wish" ng-if="type == 1">
+    <div ng-click="addRemove(wishListExists, $event)" class="fa-wish" ng-class="{'active' : wishListExists}" tooltip-title="{{!wishListExists? 'Add to wishlist':'Remove from wishlist'}}" tooltip>
+        <i class="fa fa-heart"></i> 
+    </div>
+</div>
+
+<div class="toggle_button" ng-if="type == 2">
+    <input type="submit" class="toggle orange-gradient" value="{{!wishListExists ? 'Add To Wish List' : 'Wish List Added'}}" ng-click="addRemove(wishListExists, $event)"/>
+    <i class="fa fa-heart" ng-class="{'active' : wishListExists}" ng-click="addRemove(wishListExists, $event)"></i>
+</div>

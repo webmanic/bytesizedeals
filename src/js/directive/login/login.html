@@ -1,0 +1,41 @@
+<div class="login_box">
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="./img/icon/tray.png" alt="Food" srcset="">
+            </div>
+            <div class="title">
+                SIGN IN
+            </div>
+        </div>
+        <form ng-submit="login_submit($event, login)" model="login" id="login" autocomplete="off">
+            <div class="form-group">
+                <input type="text" 
+                    name="username" 
+                    id="username" 
+                    ng-class="{'error': login.username.valid == false,
+                               'valid': login.username.valid == true}" 
+                    ng-model="login.username.value" 
+                    placeholder="Username..."
+                    autocomplete="username">
+            </div>
+            <div class="form-group">
+                <input type="password" 
+                    name="password" 
+                    id="password" 
+                    ng-class="{'error': login.password.valid == false,
+                               'valid': login.password.valid == true}" 
+                    ng-model="login.password.value"
+                    placeholder="Password..."
+                    autocomplete="password">
+            </div>
+            <button role="submit" class="button_submit blue">
+                Login
+                <img class="buffer" src="./img/gif/buffer.gif" ng-if="loader"/>
+            </button>
+            <div class="reset_password">
+                <a ui-sref="reset">Forgot your password?</a>
+            </div>
+        </form>
+    </div>
+</div>

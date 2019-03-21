@@ -1,0 +1,31 @@
+.wish-list{
+    .restaurant{
+        flex-basis: 50%;
+        .container{
+            display: flex;
+            .container_top{
+                flex-basis: 40%;
+                .logo{
+                    img{
+                        position: absolute;
+                    }
+                }
+            }
+            .container_bottom{
+                flex-basis: 60%;
+            }
+        }
+        @include respond-to(md){
+            flex-basis: 50%;
+        }
+        @include respond-to(sm){
+            flex-basis: 100%;
+        }
+        @include respond-to(xs){
+            flex-basis: 100%;
+        }
+        @include respond-to(xxs){
+            flex-basis: 100%;
+        }
+    }
+}

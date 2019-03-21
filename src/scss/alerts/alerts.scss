@@ -1,0 +1,76 @@
+.alerts{
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 90px;
+    margin: auto;
+    z-index: 9999;
+
+    a{
+        color: inherit;
+    }
+
+    .container{
+        position: relative;
+        padding: 20px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        font-size: 24px;
+        text-align: center;
+        margin-left: 15px;
+        margin-right: 15px;
+        border-right: 40px solid #000000d1;
+        border-bottom: 0px;
+        
+        .close{
+            position: absolute;
+            right: -30px;
+            top: 23px;
+            bottom: 0px;     
+            img{
+                width: 20px;
+                cursor: pointer;
+            }
+        }
+
+        @include respond-to(xs){
+            font-size: 18px;
+        }
+
+        @include respond-to(xxs){
+            font-size: 18px;
+        }
+    }
+
+    .container.info{
+        background: #0aff00f0;
+        color: #464646;
+    }
+
+    .container.error{
+        background: #ff0000d1;
+        color: white;
+    }
+
+    .container.warn{
+        background: #fffc00de;
+        color: #4a4a4a;
+    }
+
+    @include respond-to(lg){
+        width: 770px;
+    }
+    @include respond-to(md){
+        width: 770px;
+    }
+    @include respond-to(sm){
+        width: 770px;
+    }
+    @include respond-to(xm){
+        top: 58px;
+    }
+    @include respond-to(xxs){
+        top: 58px;
+    }
+}

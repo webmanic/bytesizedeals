@@ -1,0 +1,64 @@
+.subscribe{
+    position: fixed;
+    background: black;
+    color: white;
+    border: 3px solid #f99c1c1f;
+    padding: 15px;
+    top: 0px;
+    z-index: 1001;
+    box-sizing: border-box;
+    max-width: 600px;
+    min-width: 300px;
+    left: 15px;
+    right: 15px;
+    margin: auto;
+    top: 35%;
+    overflow: hidden;
+    p.info{
+        color: grey;
+        margin-top: 5px;
+        margin-bottom: 0px;
+    }
+    form{
+        display: table;
+        width: 100%;
+        .form-group{
+            display: inline-block;
+            width: 80%;
+            vertical-align: top;
+        }
+        button{
+            display: inline-block;
+            width: 20%;
+            vertical-align: top;
+            font-size: 30px;
+        }
+    }
+    .container{
+        position: relative;
+        padding: 0px !important;
+    }
+    .close{
+        position: absolute;
+        right: 0px;
+        font-size: 24px;
+        top: 0px;
+        cursor: pointer;
+    }
+    .error_info{
+        position: relative;
+        background: #ff000099;
+        color: white;
+        padding: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
+        @include transition(all 0.5s linear);
+        clear: both;
+    }
+    @include respond-to(xxs){
+        top: 28%;
+    }
+    @include respond-to(xs){
+        top: 28%;
+    }
+}

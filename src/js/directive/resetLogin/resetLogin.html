@@ -1,0 +1,30 @@
+<div class="signup_form reset_login_form">   
+        <div class="container-left">
+            <h1>Find Your Account</h1>
+            <p>
+                Please enter your email address to search for your account.
+            </p>
+        </div>
+        <div class="container-right">
+            <form ng-submit="reset_password_submit(reset, false)" model="reset" id="reset" autocomplete="off">
+                <div class="form-group">
+                    <input type="text" 
+                        name="email" 
+                        id="email" 
+                        ng-class="{'error': reset.username.valid == false,
+                                   'valid': reset.username.valid == true}"  
+                        ng-model="reset.username.value" 
+                        ng-blur="validateLength('username', 5); fieldBlur('username');" 
+                        ng-focus="fieldFocus('username')" 
+                        placeholder="Find your Email/Username..."
+                        autocomplete="email">
+                    <div class="error_info" ng-if="reset.username.valid == false && reset.username.error =='email_not_valid'">Email is not valid</div>
+                    <div class="error_info" ng-if="reset.username.valid == false && reset.username.error =='length'">Field length is not valid</div>
+                </div>
+                <button type="submit" class="button_submit blue">
+                    Submit
+                    <img class="buffer" src="./img/gif/buffer.gif" ng-if="loader"/>
+                </button>
+            </form>
+        </div>
+    </div> 

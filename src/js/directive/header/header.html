@@ -1,0 +1,24 @@
+<header>
+    <div class="container">
+        <div class="info_left">
+            <a ui-sref="home" ng-click="cleanUrl()">
+                <img src="./img/logo/logo.png" alt="Logo" srcset="" class="logo"/>
+            </a> 
+        </div>
+        <div class="info_right">
+            <div class="nav_bar">
+                <span ng-if="!isLoggedIn">
+                    <a ui-sref="signup" ui-sref-active="active">Signup</a>  
+                    <a ui-sref="login" ui-sref-active="active" ng-click="login()">Login</a>
+                </span>
+                <span ng-if="isLoggedIn">
+                    <a ui-sref="restaurantSignup" ng-show="restaurantSignup == true && (jwtPayLoad.role.indexOf('blog') == -1 || jwtPayLoad.role.indexOf('restaurant') != -1)" ui-sref-active="active">Register</a> 
+                    <a ui-sref="restaurantUpdate" ng-show="restaurantSignup == false && (jwtPayLoad.role.indexOf('blog') == -1 || jwtPayLoad.role.indexOf('restaurant') != -1)" ui-sref-active="active">Update</a> 
+                    <a ui-sref="logoff" class="logout" ng-click="logout()">Log out</a>
+                </span>
+                <bt-nav-bar-settings wish-list-count="wishListCount" jwt-pay-load="jwtPayLoad" ng-show="wishListCount > 0 || jwtPayLoad" restaurant-id="restaurantId" restaurant-signup="restaurantSignup"></bt-nav-bar-settings>
+            </div>
+        </div>
+        <div class="clear_both"></div>
+    </div>
+</header>

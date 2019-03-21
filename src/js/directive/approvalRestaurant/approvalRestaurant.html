@@ -1,0 +1,27 @@
+<div>
+    <div class="container">
+        <div class="container_top">
+            <div class="logo">
+                <img src="{{src}}" imageonload="doThis(appConfig.domain + restaurant.logo)"/>
+                <div class="clear_both"></div>
+            </div>
+            <div ng-if="restaurant.distance" class="distance">
+                <i class="fa fa-map-marker marker"></i> {{restaurant.distance | number: 2}}miles
+            </div>
+        </div>
+        <div class="container_bottom">
+            <div class="title">
+                {{restaurant.restaurant_id}} - {{restaurant.title}} 
+                <i class="fa fa-info-circle info-icon" ng-click="showModal=true"></i>
+            </div>
+            <p>
+                Contact Info: {{restaurant.username}} - {{restaurant.email}}
+            </p>
+            <p>
+                Created: {{formatDate(restaurant.datetime) | date:'dd/MM/yyyy'}}.
+            </p>
+            <bt-approval-confirm restaurant="restaurant" restaurant-approval-list="restaurantApprovalList" index="index"></bt-approval-confirm>
+        </div> 
+    </div>
+</div>
+<bt-approval-modal restaurant="restaurant" restaurant-approval-list="restaurantApprovalList" index="index" ng-if="showModal" show-modal="showModal" close="close()"></bt-approval-modal>

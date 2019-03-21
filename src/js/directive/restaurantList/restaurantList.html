@@ -1,0 +1,39 @@
+<div ui-sref="restaurant({id:restaurant.id})">
+    <div class="container">
+        <div class="container_top">
+            <bt-wish restaurant="restaurant" type=1></bt-wish>
+            <bt-stars class="stars"
+                    rate="restaurant.rate/restaurant.review" 
+                    tooltip 
+                    tooltip-title="{{getText(restaurant.rate, restaurant.review)}}"></bt-stars>
+            <div class="logo">
+                <img src="{{src}}" imageonload="doThis(appConfig.domain + restaurant.logo)"/>
+                <div ng-if="restaurant.distance" class="distance">
+                    <i class="fa fa-map-marker marker"></i> 
+                    {{restaurant.distance | number: 2}}miles
+                </div>
+            </div>
+        </div>
+        <div class="container_bottom">
+            <h1 class="title">
+                {{restaurant.title}}
+            </h1>
+            <div class="categories" tooltip tooltip-title="Categories">
+                <span ng-repeat="category in restaurant.categories">
+                    {{category}}
+                </span>
+                <div class="clear_both"></div>
+            </div>
+            <p class="hours" ng-if="!restaurant.opening_hours[dayLong].closed" tooltip tooltip-title="Opening hours">
+                {{restaurant.opening_hours[dayLong].from.hour}}:{{restaurant.opening_hours[dayLong].from.minute}} - 
+                {{restaurant.opening_hours[dayLong].to.hour}}:{{restaurant.opening_hours[dayLong].to.minute}}
+                <i class="fa fa-clock-o"></i>
+            </p>
+            <p class="hours closed" ng-if="restaurant.opening_hours[dayLong].closed" tooltip tooltip-title="Restaurant is closed">Closed</p>
+            <p class="post_code" tooltip tooltip-title="Postcode">
+                {{restaurant.post_code}}
+                <i class="fa fa-map-marker"></i>
+            </p> 
+        </div> 
+    </div>
+</div>

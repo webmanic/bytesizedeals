@@ -1,0 +1,171 @@
+.restaurant-profile{
+    display: flex;
+    width: 100%;
+    .logo img{
+        width: 100%;
+        background: #00000033;
+        display: block;
+    }
+    label{
+        clear: both;
+        width: 100%;
+        display: block;
+        margin-bottom: 10px;
+    }
+    .star_reviewes{
+        position: relative;
+        top: -8px;
+        margin-bottom: 10px;
+        clear: both;
+        height: 15px;
+        .stars{
+            position: relative;
+            top: 3px;
+        }
+        .title{
+            float: left;
+            clear: right;
+            font-size: 13px;
+            position: relative;
+            top: 4px;
+            left: 4px;
+        }
+    }
+    .categories{
+        margin-bottom: 10px;
+        .category{
+            background: #0089ff;
+            padding: 5px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            float: left;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+    }
+    .toggle_button{
+
+        position: relative;
+        clear: both;
+
+        .toggle{
+            cursor: pointer;
+            width: 100%;
+            border: none;
+            padding: 10px;
+            color: white;
+            font-size: 20px;
+        }
+
+        .fa{
+            position: absolute;
+            right: 9px;
+            top: 9px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .fa-heart{
+            color:#ffffff80;
+        }
+
+        .fa-heart.active{
+            color: white;
+        }
+    }   
+
+    .collapse{
+        background: #00000033;
+        .container{
+            padding: 10px !important;
+            span{
+                clear: both;
+                display: block;
+            }
+        }
+        p{
+            margin-bottom: 0px;
+        }
+    }
+    .collapse.qrcode{
+        text-align: center;
+        p{
+            position: relative;
+            background: black;
+            margin-left: -10px;
+            margin-right: -10px;
+            margin-bottom: -10px;
+            margin-top: 8px;
+            padding: 10px;
+        }
+        img{
+            text-align: center;
+            margin: auto;
+            border: 10px solid white;
+        }
+    }
+    .link{
+        margin-bottom: 10px;
+        .external_link{
+            color: white;
+            text-decoration: none;
+            background: orange;
+            padding: 10px;
+            border-radius: 100px;
+            cursor: pointer;
+            width: 100%;
+            display: block;
+            text-align: center;
+            font-size: 19px;
+            box-sizing: border-box;
+        } 
+        .external_link:hover{
+            opacity: 0.9;
+        } 
+    }
+    .google-map .map{
+        clear: both;
+        height: 350px;
+    }  
+    table.opening_hours{
+        width: 100%;
+        border-spacing: 0px;
+        tr.todays_date{
+            color: #ffa502;
+        }
+        td{
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        td.day{
+            text-transform: capitalize;
+        }
+        td.hours{
+            text-align: center;
+        }
+    }
+    @include respond-to(xs){
+        display: block;
+    }
+    @include respond-to(xxs){
+        display: block;
+    }
+    .form_title{
+        background: #190f0fb5;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-align: center;
+        color: white;
+        border-top: 1px solid #333333;
+        border-bottom: 1px solid #333333;
+    }
+    .button_submit{
+        height: 45px;
+        @include respond-to(sm){
+            height: 35px;
+            font-size: 14px;
+        }
+    }
+}

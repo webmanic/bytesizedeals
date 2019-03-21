@@ -1,0 +1,107 @@
+.button_submit{
+    position: relative;
+    width: 100%;
+    color: white;
+    height: 60px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    outline: 0px;
+
+    .buffer{
+        position: absolute;
+        right: 15px;
+        width: 25px;
+        float: right;
+        opacity: 0.4;
+    }
+
+    img{
+        width: 25px;
+        position: relative;
+    }
+}
+
+.cash-payment-button{
+    @include respond-to(md){
+        height: 45px;
+        line-height: 45px;
+        font-size: 18px;
+    }
+    @include respond-to(sm){
+        height: 45px;
+        line-height: 45px;
+        font-size: 18px;
+    }
+    @include respond-to(xxs){
+        height: 35px;
+        line-height: 35px;
+        font-size: 16px;
+    }
+}
+
+.blue{
+    background: #0089ff;
+    color: white;
+}
+
+.blue:hover{
+    background: rgba(19,78,133,1);
+}
+
+.blue-a.center{
+    background: #004096;
+    color: white;
+}
+
+.blue-a:hover{
+    background: #013477;
+    color: white;
+}
+
+.green{
+    background: #009616;
+}
+.green.center{
+    text-align: center;
+    align-items: center;
+    line-height: 60px;
+}
+
+.green:hover{
+    background: #007311;
+}
+
+.border-orange{
+    border-bottom: 3px solid #f99c1c;
+}
+
+.focus{
+    border-bottom: 3px solid #0089ff;
+}
+
+.error{
+    border-bottom: 3px solid #ff0000;
+}
+
+.valid{
+    border-bottom: 3px solid #00b717;
+}
+
+.orange-gradient{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ea5507+-1,ea5507+11,f17432+50,fb955e+100 */
+    background: #ea5507; /* Old browsers */
+    background: -moz-linear-gradient(top, #ea5507 -1%, #ea5507 11%, #f17432 50%, #fb955e 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ea5507 -1%,#ea5507 11%,#f17432 50%,#fb955e 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ea5507 -1%,#ea5507 11%,#f17432 50%,#fb955e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ea5507', endColorstr='#fb955e',GradientType=0 ); /* IE6-9 */
+}
+
+.orange-gradient:hover{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fc894b+0,fb955e+100 */
+    background: #fc894b; /* Old browsers */
+    background: -moz-linear-gradient(top, #fc894b 0%, #fb955e 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #fc894b 0%,#fb955e 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #fc894b 0%,#fb955e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fc894b', endColorstr='#fb955e',GradientType=0 ); /* IE6-9 */
+}

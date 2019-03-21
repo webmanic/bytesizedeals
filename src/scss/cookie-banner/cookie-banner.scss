@@ -1,0 +1,63 @@
+.cookie_banner{
+    background: #0086ff;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    color: white;
+    font-size: 16px;
+    z-index: 99999;
+    .link{
+        text-decoration: underline;
+    }
+    .link:hover{
+        text-decoration: none;
+    }
+    .accept{
+        float: right;
+        border: 0px;
+        padding: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 3px;
+        margin-bottom: -10px;
+        cursor: pointer;
+        background: #ffffffd9;
+        border: 1px solid #ffffffd9;
+        color: black;
+        box-sizing: border-box;
+        @include respond-to(xxs){
+            margin-top: 10px;
+            width: 100%;
+        }
+        @include respond-to(xs){
+            margin-top: 3px;
+        }
+        @include respond-to(sm){
+            margin-top: 3px;
+        }
+    }
+    .accept:hover{
+        background: white;
+        border: 1px solid white;
+        color: #000000;
+    }
+    .content_left{
+        text-align: left;
+        float: left;
+        width: 80%;
+        @include respond-to(xxs){
+            width: 100%;
+        }
+    }
+    .content_right{
+        float: right;
+        width: 20%;
+        @include respond-to(xxs){
+            width: 100%;
+        }
+    }
+}

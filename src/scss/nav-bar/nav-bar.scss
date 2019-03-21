@@ -1,0 +1,25 @@
+.nav_bar{
+    float: right;
+    ul{
+        list-style: none;
+        float: right;
+        margin: 0px;
+        padding: 0px;
+        padding-left: 5px;
+        ul{
+            position: absolute;
+            width: 300px;
+            right: 0px;
+            @include respond-to(xxs){
+                li:first-child{
+                    margin-top: -10px;
+                }
+            }
+            @include respond-to(xxs){
+                li{
+                    margin-bottom: -10px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+<div class="galleries">
+    <h3>Gallery:</h3>
+    <slick settings="slickConfig" slides-to-show=4 slides-to-scroll=1 lazy-load="ondemand" ng-if="galleries">
+        <div class="image" ng-repeat="gallery in galleries track by $index">
+            <a href="{{appConfig.domain + gallery}}" data-featherlight="image">
+                <img data-lazy="{{appConfig.domain + gallery}}" ng-src="{{appConfig.domain + gallery}}" alt="">
+            </a>
+        </div>
+    </slick>
+</div>
