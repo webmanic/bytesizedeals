@@ -40,12 +40,11 @@
             ";
 
             // To send HTML mail, the Content-type header must be set
-            $headers[] = "MIME-Version: 1.0";
-            $headers[] = "Content-type: text/html; charset=iso-8859-1";
-            $headers[] = "To: {$to} <{$to}>";
-            $headers[] = "From: {$EMAIL_TITLE} Signup <{$SUPPORT_EMAIL}>";
+            $headers = "MIME-Version: 1.0" . "\r\n"; 
+            $headers .= "Content-type: text/html; charset=iso-8859-1" . "\r\n"; 
+            $headers .= "From: {$EMAIL_TITLE} Signup <{$SUPPORT_EMAIL}>" . "\r\n"; 
 
-            mail('', $subject, $message, implode("\r\n", $headers));
+            mail($to, $subject, $message, $headers);
         }
 
         function contactSubmitAdmin($contactUsDetail){
@@ -82,12 +81,11 @@
             ";
 
             // To send HTML mail, the Content-type header must be set
-            $headers[] = "MIME-Version: 1.0";
-            $headers[] = "Content-type: text/html; charset=iso-8859-1";
-            $headers[] = "To: {$EMAIL_TITLE} support <{$to}>";
-            $headers[] = "From: {$EMAIL_TITLE} Signup <{$SUPPORT_EMAIL}>";
+            $headers = "MIME-Version: 1.0"  . "\r\n"; 
+            $headers .= "Content-type: text/html; charset=iso-8859-1"  . "\r\n"; 
+            $headers .= "From: {$EMAIL_TITLE} Signup <{$SUPPORT_EMAIL}>"  . "\r\n"; 
 
-            mail('', $subject, $message, implode("\r\n", $headers));
+            mail($to, $subject, $message, $headers);
         }
     }
 ?>

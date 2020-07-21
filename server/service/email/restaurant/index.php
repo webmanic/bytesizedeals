@@ -90,12 +90,11 @@
             ";
 
             // To send HTML mail, the Content-type header must be set
-            $headers[] = "MIME-Version: 1.0";
-            $headers[] = "Content-type: text/html; charset=iso-8859-1";
-            $headers[] = "To: {$firstname} {$lastname} <{$to}>";
-            $headers[] = "From: {$EMAIL_TITLE} Restaurant Signup Approval <{$SUPPORT_EMAIL}>";
+            $headers = "MIME-Version: 1.0" . "\r\n"; 
+            $headers .= "Content-type: text/html; charset=iso-8859-1" . "\r\n"; 
+            $headers .= "From: {$EMAIL_TITLE} Restaurant Signup Approval <{$SUPPORT_EMAIL}>" . "\r\n"; 
 
-            mail('', $subject, $message, implode("\r\n", $headers));
+            mail($to, $subject, $message, $headers);
         }
 
         function restaurantSignupAdmin($emailDetail){
@@ -178,12 +177,12 @@
             ";
 
             // To send HTML mail, the Content-type header must be set
-            $headers[] = "MIME-Version: 1.0";
-            $headers[] = "Content-type: text/html; charset=iso-8859-1";
-            $headers[] = "To: {$SUPPORT_EMAIL} <{$to}>";
-            $headers[] = "From: {$EMAIL_TITLE} Restaurant Signup Approval <{$SUPPORT_EMAIL}>";
+            $headers = "MIME-Version: 1.0" . "\r\n"; 
+            $headers .= "Content-type: text/html; charset=iso-8859-1" . "\r\n"; 
+            $headers .= "To: {$SUPPORT_EMAIL} <{$to}>" . "\r\n"; 
+            $headers .= "From: {$EMAIL_TITLE} Restaurant Signup Approval <{$SUPPORT_EMAIL}>" . "\r\n"; 
 
-            mail('', $subject, $message, implode("\r\n", $headers));
+            mail($to, $subject, $message, $headers);
         }
 
         function restaurantConfirmApproval($emailDetail){
@@ -290,12 +289,11 @@
             ";
 
             // To send HTML mail, the Content-type header must be set
-            $headers[] = "MIME-Version: 1.0";
-            $headers[] = "Content-type: text/html; charset=iso-8859-1";
-            $headers[] = "To: {$firstname} {$lastname} <{$to}>";
-            $headers[] = "From: {$EMAIL_TITLE} Restaurant Signup Approval <{$SUPPORT_EMAIL}>";
+            $headers = "MIME-Version: 1.0" . "\r\n"; 
+            $headers .= "Content-type: text/html; charset=iso-8859-1" . "\r\n"; 
+            $headers .= "From: {$EMAIL_TITLE} Restaurant Signup Approval <{$SUPPORT_EMAIL}>" . "\r\n"; 
 
-            mail('', $subject, $message, implode("\r\n", $headers));
+            mail($to, $subject, $message, $headers);
         }
 
 
@@ -414,12 +412,11 @@
             ";
 
             // To send HTML mail, the Content-type header must be set
-            $headers[] = "MIME-Version: 1.0";
-            $headers[] = "Content-type: text/html; charset=iso-8859-1";
-            $headers[] = "To: {$firstname} {$lastname} <{$to}>";
-            $headers[] = "From: {$EMAIL_TITLE} Restaurant Signup Renewal <{$SUPPORT_EMAIL}>";
+            $headers = "MIME-Version: 1.0" . "\r\n"; 
+            $headers .= "Content-type: text/html; charset=iso-8859-1" . "\r\n"; 
+            $headers .= "From: {$EMAIL_TITLE} Restaurant Signup Renewal <{$SUPPORT_EMAIL}>" . "\r\n"; 
 
-            mail('', $subject, $message, implode("\r\n", $headers));
+            mail($to, $subject, $message, $headers);
         }
 
         function restaurantRenewAdmin($emailDetail){
@@ -532,12 +529,12 @@
             ";
 
             // To send HTML mail, the Content-type header must be set
-            $headers[] = "MIME-Version: 1.0";
-            $headers[] = "Content-type: text/html; charset=iso-8859-1";
-            $headers[] = "To: {$SUPPORT_EMAIL} <{$to}>";
-            $headers[] = "From: {$EMAIL_TITLE} Restaurant Signup Renewal <{$SUPPORT_EMAIL}>";
+            $headers = "MIME-Version: 1.0" . "\r\n"; 
+            $headers .= "Content-type: text/html; charset=iso-8859-1" . "\r\n"; 
+            $headers .= "To: {$SUPPORT_EMAIL} <{$to}>" . "\r\n"; 
+            $headers .= "From: {$EMAIL_TITLE} Restaurant Signup Renewal <{$SUPPORT_EMAIL}>" . "\r\n"; 
 
-            mail('', $subject, $message, implode("\r\n", $headers));
+            mail($to, $subject, $message, $headers);
         }
     }
     
